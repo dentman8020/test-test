@@ -1,0 +1,2 @@
+class Meishi < ApplicationRecord
+end
