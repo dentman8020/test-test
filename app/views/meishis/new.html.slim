@@ -1,27 +1,23 @@
-h1 Meishis#new
-p Find me in app/views/meishis/new.html.slim
-.nav.justify-content-end
- = link_to '一覧', meishis_path
- 
-= form_with model: @meishi, local: true do |f|
+hi 名刺の新規登録
+= link_to '一覧', meishis_path, class: 'nav-link'
 
- = f.label :name
- = f.text_field :name, id: `meishi_name`
- 
- = f.label :intro
- = f.text_field :name, id: `meishi_intro`
-
- = f.label :line
- = f.text_field :name, id: `meishi_line`
-
- = f.label :twitter
- = f.text_field :name, id: `meishi_twitter`
-
- = f.label :insta
- = f.text_field :name, id: `meishi_insta`
-
-  = f.label :facebook
- = f.text_field :name, id: `meishi_facebook`
-  
- 
- = f.submit nil
+= form_with model: @task, local: true do |f|
+ .form-group
+  =f.label :name
+  =f.text_field :name, class: 'form-control', id: 'meishi_name'
+ .form-group
+  =f.label :intro
+  =f.text_field :intro, class: 'form-control', id: 'meishi_intro'
+  .form-group
+  =f.label :line
+  =f.text_field :line, class: 'form-control', id: 'meishi_line'
+  .form-group
+  =f.label :insta
+  =f.text_field :insta, class: 'form-control', id: 'meishi_insta'
+  .form-group
+  =f.label :twitter
+  =f.text_field :twitter, class: 'form-control', id: 'meishi_twitter'
+  .form-group
+  =f.label :facebook
+  =f.text_field :facebook, class: 'form-control', id: 'meishi_facebook'
+ = f.submit nil, class: 'btn btn-primary'
