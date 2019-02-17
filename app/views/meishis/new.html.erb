@@ -1,0 +1,23 @@
+<h1> 名刺の新規登録</h1>
+<%= link_to '一覧', meishis_path, class: 'nav-link' %>
+
+<%= form_with model: @meishi, local: true do |f| %>
+ <div class="form-group"></div>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control', id: 'meishi_name' %>
+ <div class="form-group"></div>
+  <%= f.label :intro %>
+  <%= f.text_field :intro, class: 'form-control', id: 'meishi_intro' %>
+  <div class="form-group"></div>
+  <%= f.label :line %>
+  <%= f.text_field :line, class: 'form-control', id: 'meishi_line' %>
+  <div class="form-group"></div>
+  <%= f.label :insta %>
+  <%= f.text_field :insta, class: 'form-control', id: 'meishi_insta' %>
+  <div class="form-group"></div>
+  <%= f.label :twitter %>
+  <%= f.text_field :twitter, class: 'form-control', id: 'meishi_twitter' %>
+  <div class="form-group"></div>
+  <%=f.label :facebook %>
+  <%= f.text_field :facebook, class: 'form-control', id: 'meishi_facebook' %>
+ <%= f.submit nil, class: 'btn btn-primary'
