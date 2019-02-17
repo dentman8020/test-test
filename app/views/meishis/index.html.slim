@@ -3,13 +3,13 @@ f1 名刺一覧
 =link_to '名刺登録', new_meishi_path, class:'btn btn^primary'
 
 mb-3
-#table.table.table-hover 
- #thead.thead-default  
-   #tr
-   # th= Meishi.human_attribute_name(:name)
- #tbody - @meishi.each do |meishi|
-  # tr
-  #  td= meishi.name   
+table.table.table-hover 
+ thead.thead-default  
+   tr
+    
+ tbody - @meishi.each do |meishi|
+   tr
+    td= meishi.name   
 
 
 <table>
@@ -39,17 +39,14 @@ mb-3
 
 
 
-#<table class="table">
+<table class="table">
   
   <thead>
     <tr>
       
       <th scope="col">名前</th>
       <th scope="col">コメント</th>
-      <th scope="col">LINE</th>
-      <th scope="col">INSTA</th>
-      <th scope="col">Twitter</th>
-      <th scope="col">Facebook</th>
+      
       
     </tr>
   </thead>
