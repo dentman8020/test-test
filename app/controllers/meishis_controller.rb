@@ -15,12 +15,13 @@ class MeishisController < ApplicationController
   end
   
   def create
-    meishi = Meishi.new
-    meishi.save!
-    redirect_to  meishis_url, notice: "名刺名「#{meishi.name}」を登録しました"
+    @meishi = Meishi.new(meishi_params)
+    @meishi.save
+    redirect_to  meishis_url, status: 301
   end
+
   private
   def meishi_params
-    params.require(:task).permit(:name, :intro, :line, :insta, :twitter, :facebook) 
+    params.require(:meishi).permit(:name, :intro, :line, :insta, :twitter, :facebook) 
   end
 end  
