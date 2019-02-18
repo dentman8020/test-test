@@ -1,12 +1,60 @@
-h1 Meishis#edit
-p Find me in app/views/meishis/edit.html.slim
-<h1>タスクの編集</h1>
+<h1>名刺の編集</h1>
 
-<%= form_for(@meishi) do |f| %>
-  <%= f.label :name, 'タスク' %>
-  <%= f.text_field :name %>
+<h2>編集する名刺の表示</h2>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>intro</th>
+      <th>line</th>
+      <th>insta</th>
+      <th>twitter</th>
+      <th>facebook</th>
+    </tr>
+  </thead>
+    <tr>
+      <th><%= @meishi.id %></th>
+      <th><%= @meishi.name %></th>
+      <th><%= @meishi.intro %></th>
+      <th><%= @meishi.line %></th>
+      <th><%= @meishi.insta %></th>
+      <th><%= @meishi.twitter %></th>
+      <th><%= @meishi.facebook %></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th><%= @meishi.insta %></th>
+      <th><a href="https://instagram.com/<%= @meishi.insta %>"><img src="https://img.icons8.com/color/96/000000/instagram.png"></a></th>
+      <th><a href="https://twitter.com/<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/96/000000/twitter.png"></a></th>
+      <th><a href="https://facebook.com/<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/96/000000/facebook.png"></a></th>
+    </tr>
+</table>
 
-  <%= f.submit '投稿' %>
-<% end %>
+<h2>名刺の編集</h2>
 
-<%= link_to '一覧に戻る', meishis_path %>
+<%= link_to '一覧の戻る', meishis_path, class: 'nav-link' %>
+
+<%= form_with model: @meishi, local: true do |f| %>
+ <div class="form-group"></div>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control', id: 'meishi_name' %>
+ <div class="form-group"></div>
+  <%= f.label :intro %>
+  <%= f.text_field :intro, class: 'form-control', id: 'meishi_intro' %>
+  <div class="form-group"></div>
+  <%= f.label :line %>
+  <%= f.text_field :line, class: 'form-control', id: 'meishi_line' %>
+  <div class="form-group"></div>
+  <%= f.label :insta %>
+  <%= f.text_field :insta, class: 'form-control', id: 'meishi_insta' %>
+  <div class="form-group"></div>
+  <%= f.label :twitter %>
+  <%= f.text_field :twitter, class: 'form-control', id: 'meishi_twitter' %>
+  <div class="form-group"></div>
+  <%=f.label :facebook %>
+  <%= f.text_field :facebook, class: 'form-control', id: 'meishi_facebook' %>
+ <%= f.submit nil, class: 'btn btn-primary' %>
+ <% end %>

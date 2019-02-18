@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_02_14_103508) do
     t.text "twitter"
     t.text "insta"
     t.text "facebook"
+    t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

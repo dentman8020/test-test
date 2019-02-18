@@ -1,9 +1,36 @@
 
 
-<p><%= @meishi.name %></p>
-<p><%= @meishi.intro %></p>
-<p><%= @meishi.insta %></p>
-<p><%= @meishi.twitter %></p>
-<p><%= @meishi.facebook %></p>
+<h2>名刺の表示のテスト</h2>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>intro</th>
+      <th>line</th>
+      <th>insta</th>
+      <th>twitter</th>
+      <th>facebook</th>
+    </tr>
+  </thead>
+    <tr>
+      <th><%= @meishi.id %></th>
+      <th><%= @meishi.name %></th>
+      <th><%= @meishi.intro %></th>
+      <th><%= @meishi.line %></th>
+      <th><%= @meishi.insta %></th>
+      <th><%= @meishi.twitter %></th>
+      <th><%= @meishi.facebook %></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th><%= @meishi.insta %></th>
+      <th><a href="https://instagram.com/<%= @meishi.insta %>"><img src="https://img.icons8.com/color/96/000000/instagram.png"></a></th>
+      <th><a href="https://twitter.com/<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/96/000000/twitter.png"></a></th>
+      <th><a href="https://facebook.com/<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/96/000000/facebook.png"></a></th>
+    </tr>
+</table>
 
 <%= link_to '一覧に戻る', meishis_path %>

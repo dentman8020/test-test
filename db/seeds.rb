@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Meishi.create(:name => "Yoshikane", :intro => "よろしくお願いします。", :insta => "insta_id", :twitter => "twitter_id", :facebook => "Facebook_id")
+Meishi.create(:name => "Yoshimura", :intro => "よろしくお願いします。", :line => "line_id", :insta => "insta_id", :twitter => "twitter_id", :facebook => "Facebook_id", :url => "d41d8cd98f00b2")

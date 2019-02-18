@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'meishis/show'
   get 'meishis/new'
   get 'meishis/edit'
+  post 'meishis/:id/edit' => 'meishis#edit'
+
   root to: 'meishis#index'
   resources :meishis
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
