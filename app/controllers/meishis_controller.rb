@@ -13,6 +13,12 @@ class MeishisController < ApplicationController
 
   def edit
   end
+
+  def destroy
+    @meishi = Meishi.find(params[:id])
+    @meishi.destroy
+    redirect_to meishis_path
+  end
   
   def create
     @meishi = Meishi.new(meishi_params)

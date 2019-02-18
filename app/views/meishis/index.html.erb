@@ -31,6 +31,9 @@
       <th>
         <%= meishi.name %>
       </th>
+       <th>
+        <%= link_to '削除', meishi_path(meishi), method: :delete %>
+        </th>
     </tr>
     <% end %>
   </table>
@@ -68,6 +71,9 @@
         </th>
         <th>
           <%= meishi.facebook %>
+        </th>
+        <th>
+        <%= link_to '削除', meishi_path(meishi), method: :delete %>
         </th>
       </tr>
       <% end %>
