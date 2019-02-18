@@ -1,0 +1,12 @@
+h1 Meishis#edit
+p Find me in app/views/meishis/edit.html.slim
+<h1>タスクの編集</h1>
+
+<%= form_for(@meishi) do |f| %>
+  <%= f.label :name, 'タスク' %>
+  <%= f.text_field :name %>
+
+  <%= f.submit '投稿' %>
+<% end %>
+
+<%= link_to '一覧に戻る', meishis_path %>
