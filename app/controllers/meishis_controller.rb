@@ -5,6 +5,11 @@ class MeishisController < ApplicationController
 
   def show
     @meishi = Meishi.find(params[:id]) #hash値からURLを付ける
+    @url = params[:url]
+    if @meishi.url!=@url then 
+      #実際は、その名刺へのアクセス権限がありません。的な静的ページを作る！forbidden.htmlなど
+      redirect_to  "https://densta.jp/", status: 301
+    end
   end
 
   def new
@@ -24,7 +29,8 @@ class MeishisController < ApplicationController
   def create
     @meishi = Meishi.new(meishi_params)
     @meishi.save
-    @meishi.url = make_hash(@meishi.create_at) #make_hashは実際にはないので良い感じに修正してください。
+    
+    @meishi.url = Digest::MD5.hexdigest(@meishi.name*@meishi.id) #make_hashは実際にはないので良い感じに修正してください。
     @meishi.update(meishi_params)
     redirect_to  meishis_url, status: 301
   end
@@ -35,6 +41,9 @@ class MeishisController < ApplicationController
     redirect_to  meishi_url, status: 301
   end
 
+  def release
+
+  end
   private
   def meishi_params
     params.require(:meishi).permit(:name, :intro, :line, :insta, :twitter, :facebook) 

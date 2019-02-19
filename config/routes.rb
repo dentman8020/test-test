@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  
+  get 'meishis/:id/:url' => 'meishis#show'
+
   get 'meishis/index'
   get 'meishis/show'
   get 'meishis/new'
   get 'meishis/edit'
   post 'meishis/:id/edit' => 'meishis#edit'
+  post 'meishis/:id/:url' => 'meishis#show'
 
   root to: 'meishis#index'
   resources :meishis
