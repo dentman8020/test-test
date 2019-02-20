@@ -8,7 +8,7 @@ class MeishisController < ApplicationController
     @url = params[:url]
     if @meishi.url!=@url then 
       #実際は、その名刺へのアクセス権限がありません。的な静的ページを作る！forbidden.htmlなど
-      redirect_to  "https://densta.jp/", status: 301
+      redirect_to  "public/forbidden", status: 301
     end
   end
 
