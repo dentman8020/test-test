@@ -14,28 +14,28 @@
     </tr>
   </thead>
     <tr>
-      <th><%= @meishi.id %></th>
-      <th><%= @meishi.name %></th>
-      <th><%= @meishi.intro %></th>
-      <th><%= @meishi.line %></th>
-      <th><%= @meishi.insta %></th>
-      <th><%= @meishi.twitter %></th>
-      <th><%= @meishi.facebook %></th>
+      <th>#{@meishi.id}</th>
+      <th>#{@meishi.name}</th>
+      <th>#{@meishi.intro}</th>
+      <th>#{@meishi.line}</th>
+      <th>#{@meishi.insta}</th>
+      <th>#{@meishi.twitter}</th>
+      <th>#{@meishi.facebook}</th>
     </tr>
     <tr>
       <th></th>
       <th></th>
       <th></th>
-      <th><%= @meishi.insta %></th>
-      <th><a href="https://instagram.com/<%= @meishi.insta %>"><img src="https://img.icons8.com/color/96/000000/instagram.png"></a></th>
-      <th><a href="https://twitter.com/<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/96/000000/twitter.png"></a></th>
-      <th><a href="https://facebook.com/<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/96/000000/facebook.png"></a></th>
+      <th>#{@meishi.insta}</th>
+      <th><a href="https://instagram.com/#{@meishi.insta}"><img src="https://img.icons8.com/color/96/000000/instagram.png"></a></th>
+      <th><a href="https://twitter.com/#{@meishi.twitter}"><img src="https://img.icons8.com/color/96/000000/twitter.png"></a></th>
+      <th><a href="https://facebook.com/#{@meishi.facebook}"><img src="https://img.icons8.com/color/96/000000/facebook.png"></a></th>
     </tr>
 </table>
 
 <h2>名刺の編集</h2>
 
-<%= link_to '一覧の戻る', meishis_path, class: 'nav-link' %>
+<%= link_to '一覧の戻る', meishis_path, class: 'nav-link'}
 
 <%= form_with model: @meishi, local: true do |f| %>
  <div class="form-group"></div>

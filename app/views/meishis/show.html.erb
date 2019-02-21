@@ -1,5 +1,3 @@
-
-
 <h2>名刺の表示のテスト</h2>
 <table class="table">
   <thead class="thead-dark">
@@ -23,18 +21,36 @@
       <th><%= @meishi.facebook %></th>
     </tr>
     <tr>
+      <th><%= @meishi.id %>-img</th>
       <th></th>
       <th></th>
+      <th text-align center><a href="https://line.me/<%= @meishi.line %>"><img src="https://img.icons8.com/color/25/000000/line-me.png"></a></th>
+      <th vertical-align="middle"><a href="https://instagram-new.com/<%= @meishi.insta %>"><img src="https://img.icons8.com/color/25/000000/instagram-new.png"></a></th>
+      <th vertical-align="middle"><a href="https://twitter.com/<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/25/000000/twitter-squared.png"></a></th>
+      <th vertical-align="middle"><a href="https://facebook.com/<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/25/000000/facebook.png"></a></th>
+    </tr>
+    <tr>
+      <th><%= @meishi.id %>-link</th>
       <th></th>
-      <th><a href="https://line.com/<%= @meishi.line %>"><img src="https://img.icons8.com/color/48/000000/line-me.png"></a></th>
-      <th><a href="https://instagram.com/<%= @meishi.insta %>"><img src="https://img.icons8.com/color/48/000000/instagram.png"></a></th>
-      <th><a href="https://twitter.com/<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/48/000000/twitter.png"></a></th>
-      <th><a href="https://facebook.com/<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/48/000000/facebook.png"></a></th>
+      <th></th>
+      <th vertical-align="middle"><a href="https://line.me/<%= @meishi.line %>"><%= @meishi.line %></a></th>
+      <th vertical-align="middle"><a href="https://instagram-new.com/<%= @meishi.insta %>"><%= @meishi.insta %></a></th>
+      <th vertical-align="middle"><a href="https://twitter.com/<%= @meishi.twitter %>"><%= @meishi.twitter %></a></th>
+      <th vertical-align="middle"><a href="https://facebook.com/<%= @meishi.facebook %>"><%= @meishi.facebook %></a></th>
+    </tr>
+    <tr>
+      <th><%= @meishi.id %>-both</th>
+      <th></th>
+      <th></th>
+      <th vertical-align="middle"><a href="https://line.me/<%= @meishi.line %>"><img src="https://img.icons8.com/color/25/000000/line-me.png"><%= @meishi.line %></a></th>
+      <th vertical-align="middle"><a href="https://instagram-new.com/<%= @meishi.insta %>"><img src="https://img.icons8.com/color/25/000000/instagram-new.png"><%= @meishi.insta %></a></th>
+      <th vertical-align="middle"><a href="https://twitter.com/<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/25/000000/twitter-squared.png"><%= @meishi.twitter %></a></th>
+      <th vertical-align="middle"><a href="https://facebook.com/<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/25/000000/facebook.png"><%= @meishi.facebook %></a></th>
     </tr>
 </table>
 
-<%= link_to '一覧に戻る', meishis_path %>
-
-<%= @url %>
-<%= @id %>
+<%= link_to '一覧に戻る', meishis_path %><br>
+"<%= current_user %>"<br>
+"<%= user_session %>"<br>
+"<%= user_signed_in? %>"<br>
 <%= link_to '一覧に戻る', meishis_path %>

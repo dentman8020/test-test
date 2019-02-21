@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'meishis/show'
   get 'meishis/new'
   get 'meishis/edit'
-  post 'meishis/:id/edit' => 'meishis#edit'
+  post 'meishis/:id/:url/#edit' => 'meishis#edit'
   post 'meishis/:id/:url' => 'meishis#show'
 
   root to: 'home#index'
