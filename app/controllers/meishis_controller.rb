@@ -1,6 +1,6 @@
 class MeishisController < ApplicationController
   def index
-    @meishis = Meishi.all
+    @meishis = current_user.meishis
   end
 
   def show
@@ -28,11 +28,12 @@ class MeishisController < ApplicationController
   end
   
   def create
-    @meishi = Meishi.new(meishi_params)
+    @meishi = Meishi.new
+    @meishi.user_id = current_user
     @meishi.save
     
-    @meishi.url = Digest::MD5.hexdigest(@meishi.name*@meishi.id)
-    @meishi.update(meishi_params)
+    #@meishi.url = Digest::MD5.hexdigest(@meishi.name*@meishi.id)
+    #@meishi.update(meishi_params)
     redirect_to  "/meishis/#{@meishi.id}/#{@meishi.url}/"
   end
 
