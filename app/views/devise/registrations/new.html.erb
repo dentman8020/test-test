@@ -1,29 +1,99 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <head>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Login Form Template</title>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
+		    <link rel="stylesheet" href="/assets/css/form-elements.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+        
 
-<%= render "devise/shared/links" %>
+
+        <!-- Javascript -->
+        <script src="/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/assets/js/jquery.backstretch.min.js"></script>
+        <script src="/assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </head>
+   <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                          <h1>meishi&nbsp; &nbsp;Form</h1>
+                          <div class="description">
+                            <p>30秒で作れる名刺サイト</p>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-center text-center">
+                        		  <h3>sign up</h3>
+                        		  
+                       		  </div>
+                        		<div class="form-top-right">
+                        			
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+                            
+			                    <form role="form" action="" method="post" class="login-form">
+			                    	<div class="form-group">
+
+
+                             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                                <%= render "devise/shared/error_messages", resource: resource %>
+
+                                   <div class="field">
+                                     <%= f.label :email %><br />
+                                     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                                   </div>
+
+                              <div class="field">
+                                 <%= f.label :password %>
+                                 <% if @minimum_password_length %>
+                                 <em>(<%= @minimum_password_length %> characters minimum)</em>
+                                 <% end %><br />
+                                 <%= f.password_field :password, autocomplete: "new-password" %>
+                             </div>
+
+                             <div class="field">
+                                <%= f.label :password_confirmation %><br />
+                                <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                             </div>
+
+                         <div class="actions">
+                            <%= f.submit "Sign up" %>
+                             </div>
+                          <% end %>
+
+                       <%= render "devise/shared/links" %>
