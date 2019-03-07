@@ -1,3 +1,11 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
 <h1>名刺一覧</h1>
 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'btn btn_primary'%> |
 <%= link_to '名刺入力', new_meishi_path, class:'btn btn_primary'%>
@@ -84,3 +92,47 @@
   </tr>
   <% end %>
 </table>
+
+ 
+
+
+ 
+<div class="container">
+
+    <!-- content -->
+    <div class="row" style="padding:60px 0 0 0">
+        <!-- left -->
+        <div class="col-md-3">
+            <!-- パネルで囲む -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    ようこそ
+                </div>
+                <!-- 敢えてbodyを作らないことで、メニューを詰める -->
+                <!-- <div class="panel-body"> -->
+                <ul class="nav flex-column 　">
+                    <li><a href=""> アカウント管理</a></li>
+                    <li><a href=""> SNS登録</a></li>
+                    <li><a href=""> 使い方ガイド</a></li>
+                    
+                   <li> <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                </ul> 
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <!-- center -->
+        <div class="col-md-9" >
+               <ul class="nav nav-pills nav-fill">
+                 <li class="nav-item"><a href="#" >新規</a></li>
+                 <li class="nav-item"><a href="#" >編集</a></li>
+                 <li class="nav-item"><a href="#" >削除</a></li>
+                 <li class="nav-item"><a href="#" >入れ替え</a></li>
+               </ul>
+        </div>
+
+        <!-- right -->
+     
+    </div>
+
+</div>
