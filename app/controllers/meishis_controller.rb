@@ -30,7 +30,7 @@ class MeishisController < ApplicationController
   def create
     @meishi = Meishi.new(meishi_params)
     @meishi.save
-    
+    @meishi.created_user=current_user.id
     @meishi.url = Digest::MD5.hexdigest(@meishi.name*@meishi.id)
     @meishi.update(meishi_params)
     redirect_to  "/meishis/#{@meishi.id}/#{@meishi.url}/"

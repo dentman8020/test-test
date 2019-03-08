@@ -8,7 +8,7 @@ class CreateMeishis < ActiveRecord::Migration[5.2]
       t.text :insta
       t.text :facebook
       t.text :url
-      
+      t.integer :created_user
       t.timestamps
     end
   end

@@ -1,4 +1,9 @@
-<h2>名刺の表示のテスト</h2>
+<h2>名刺の表示のテスト <%= current_user.id %> </h2>
+<% if current_user.id==@meishi.created_user %>
+<h3> あなたは名刺の作者です。 </h3>
+<% else %>
+<h3> あなたは名刺の作者ではない。 </h3>
+<% end %>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -9,7 +14,8 @@
       <th>insta</th>
       <th>twitter</th>
       <th>facebook</th>
-    </tr>
+      <th>created_user</th>
+      </tr>
   </thead>
     <tr>
       <th><%= @meishi.id %></th>
@@ -19,6 +25,7 @@
       <th><%= @meishi.insta %></th>
       <th><%= @meishi.twitter %></th>
       <th><%= @meishi.facebook %></th>
+      <th><%= @meishi.created_user %></th>
     </tr>
     <tr>
       <th><%= @meishi.id %>-img</th>
@@ -28,6 +35,7 @@
       <th vertical-align="middle"><a href="https://instagram-new.com/<%= @meishi.insta %>"><img src="https://img.icons8.com/color/25/000000/instagram-new.png"></a></th>
       <th vertical-align="middle"><a href="https://twitter.com/<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/25/000000/twitter-squared.png"></a></th>
       <th vertical-align="middle"><a href="https://facebook.com/<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/25/000000/facebook.png"></a></th>
+      <th><%= @meishi.created_user %></th>
     </tr>
     <tr>
       <th><%= @meishi.id %>-link</th>
