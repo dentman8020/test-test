@@ -64,3 +64,55 @@
 "<%= user_session %>"<br>
 "<%= user_signed_in? %>"<br>
 <%= link_to '一覧に戻る', meishis_path %>
+<div class="container">
+
+  <div class="row">
+    <!-- left -->
+    <div class="d-inline-block p-2 bg-primary text-white col-md-3 text-center">
+      <!-- パネルで囲む -->
+      <div img="">
+
+
+
+      </div>
+      <%= @meishi.name %>
+
+
+    </div>
+    <div class="col-md-9 d-inline-block p-2 bg-success text-white text-center">
+
+      <%= @meishi.intro %>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="d-inline-block p-2 bg-info text-white col-md-12">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3"><a href="https://line.me/<%= @meishi.line %>"><img src="https://img.icons8.com/color/25/000000/line-me.png">
+              <%= @meishi.line %></a></div>
+          <div class="col-md-3"><a href="https://instagram-new.com/<%= @meishi.insta %>"><img src="https://img.icons8.com/color/25/000000/instagram-new.png">
+              <%= @meishi.insta %></a></div>
+          <div class="col-md-3"><a href="https://twitter.com/<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/25/000000/twitter-squared.png">
+              <%= @meishi.twitter %></a></div>
+          <div class="col-md-3"><a href="https://facebook.com/<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/25/000000/facebook.png">
+              <%= @meishi.facebook %></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+
+  <div class="row">
+    <div class="d-inline-block p-2 bg-info text-white col-md-12 text-center">
+      <%= qrcode_tag meishis_show_path, module_size: 5 %><br>
+    </div>
+  </div>
+</div>
+</div>
