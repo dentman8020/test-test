@@ -31,7 +31,9 @@ class MeishisController < ApplicationController
 
   def destroy
     @meishi = Meishi.find(params[:id])
-    @meishi.destroy
+    if @meishi.created_user==current_user.id then 
+      @meishi.destroy
+    end
     redirect_to meishis_path
   end
   
@@ -58,6 +60,7 @@ class MeishisController < ApplicationController
   def release
 
   end
+  
   private
   def meishi_params
     params.require(:meishi).permit(:name, :intro, :line, :insta, :twitter, :facebook) 
