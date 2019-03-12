@@ -1,9 +1,8 @@
-
 <head>
-    <meta charset="utf-8">
-    <title>test</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <meta charset="utf-8">
+  <title>test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 
 <h1>名刺一覧</h1>
@@ -85,7 +84,7 @@
     <th>
       <%= meishi.url %>
     </th>
-    
+
     <th>
       <%= link_to '削除', meishi_path(meishi), method: :delete %>
     </th>
@@ -93,46 +92,102 @@
   <% end %>
 </table>
 
- 
 
 
- 
+
+
 <div class="container">
 
-    <!-- content -->
-    <div class="row" style="padding:60px 0 0 0">
-        <!-- left -->
-        <div class="col-md-3">
-            <!-- パネルで囲む -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    ようこそ
-                </div>
-                <!-- 敢えてbodyを作らないことで、メニューを詰める -->
-                <!-- <div class="panel-body"> -->
-                <ul class="nav flex-column 　">
-                    <li><a href=""> アカウント管理</a></li>
-                    <li><a href=""> SNS登録</a></li>
-                    <li><a href=""> 使い方ガイド</a></li>
-                    
-                   <li> <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-                </ul> 
-                <!-- </div> -->
-            </div>
+  <!-- content -->
+  <div class="row" style="padding:60px 0 0 0">
+    <!-- left -->
+    <div class="col-md-3">
+      <!-- パネルで囲む -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          ようこそ
         </div>
+        <!-- 敢えてbodyを作らないことで、メニューを詰める -->
+        <!-- <div class="panel-body"> -->
+        <ul class="nav flex-column 　">
+          <li><a href=""> アカウント管理</a></li>
+          <li><a href=""> SNS登録</a></li>
+          <li><a href=""> 使い方ガイド</a></li>
 
-        <!-- center -->
-        <div class="col-md-9" >
-               <ul class="nav nav-pills nav-fill">
-                  <li class="nav-item"><%= link_to '名刺入力', new_meishi_path, class:'btn btn_primary'%></li>
-                 <li class="nav-item"><a href="#" >編集</a></li>
-                 <li class="nav-item"><a href="#" >削除</a></li>
-                 <li class="nav-item"><a href="#" >入れ替え</a></li>
-               </ul>
-        </div>
-
-        <!-- right -->
-     
+          <li>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+        <!-- </div> -->
+      </div>
     </div>
 
+    <!-- center -->
+    <div class="col-md-9">
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <%= link_to '名刺入力', new_meishi_path, class:'btn btn_primary'%>
+        </li>
+        <li class="nav-item"><a href="#">編集</a></li>
+        <li class="nav-item"><a href="#">削除</a></li>
+        <li class="nav-item"><a href="#">入れ替え</a></li>
+      </ul>
+
+      <div class="card-columns">
+        <% @meishis.each do |meishi|%>
+        <div class="card container">
+
+
+
+
+
+          <div class="row">
+            <!-- left -->
+            <div class="d-inline-block p-2 bg-primary text-white col-md-3 text-center">
+              <!-- パネルで囲む -->
+              <div img="">
+              </div>
+              <%= meishi.name %>
+            </div>
+            <div class="col-md-9 d-inline-block p-2 bg-success text-white text-center">
+
+              <%= meishi.intro %>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="row">
+            <div class="d-inline-block p-2 bg-info text-white col-md-12">
+
+
+              <div class="row">
+                <div class="col-md-3 text-center"><a href="https://line.me/<%= meishi.line %>"><img src="https://img.icons8.com/color/25/000000/line-me.png">
+                    <%= meishi.line %></a></div>
+                <div class="col-md-3 text-center"><a href="https://instagram-new.com/<%= meishi.insta %>"><img src="https://img.icons8.com/color/25/000000/instagram-new.png">
+                    <%= meishi.insta %></a></div>
+                <div class="col-md-3 text-center"><a href="https://twitter.com/<%= meishi.twitter %>"><img src="https://img.icons8.com/color/25/000000/twitter-squared.png">
+                    <%= meishi.twitter %></a></div>
+                <div class="col-md-3 text-center"><a href="https://facebook.com/<%= meishi.facebook %>"><img src="https://img.icons8.com/color/25/000000/facebook.png">
+                    <%= meishi.facebook %></a></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+  <!-- right -->
+
+</div>
+
+</div>
 </div>
