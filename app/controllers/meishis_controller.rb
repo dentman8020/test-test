@@ -11,7 +11,6 @@ class MeishisController < ApplicationController
 
   def show
     @meishi = Meishi.find(params[:id]) #hash値からURLを付ける
-    
     @url = params[:url]
     if @meishi.url!=@url then 
       #実際は、その名刺へのアクセス権限がありません。的な静的ページを作る！forbidden.htmlなど
@@ -25,6 +24,9 @@ class MeishisController < ApplicationController
 
   def edit
     @meishi = Meishi.find(params[:id])
+    if @meishi.created_user!=current_user.id then 
+      redirect_to  "/forbidden", status: 301
+    end
   end
 
   def destroy
@@ -36,16 +38,21 @@ class MeishisController < ApplicationController
   def create
     @meishi = Meishi.new(meishi_params)
     @meishi.save
-    @meishi.created_user=current_user.id
     @meishi.url = Digest::MD5.hexdigest(@meishi.name*@meishi.id)
+    @meishi.update(meishi_params)
+    @meishi.created_user=current_user.id
     @meishi.update(meishi_params)
     redirect_to  "/meishis/#{@meishi.id}/#{@meishi.url}/"
   end
 
   def update
     @meishi = Meishi.find(params[:id])
-    @meishi.update(meishi_params)
-    redirect_to  meishi_url, status: 301
+    if @meishi.created_user!=current_user.id then 
+      redirect_to  "/forbidden", status: 301
+    else
+      @meishi.update(meishi_params)
+      redirect_to  meishi_url, status: 301
+    end
   end
 
   def release
