@@ -1,7 +1,13 @@
 class MeishisController < ApplicationController
   def index
-    @meishis = Meishi.all
+    if(user_signed_in?)
+      sql="SELECT * FROM meishis WHERE created_user==" << current_user.id.to_s
+      @meishis = Meishi.find_by_sql(sql)
+    else
+      redirect_to  "/forbidden", status: 301
+    end
   end
+  
 
   def show
     @meishi = Meishi.find(params[:id]) #hash値からURLを付ける

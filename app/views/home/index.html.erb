@@ -45,7 +45,7 @@
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %> |
   <%= link_to 'ユーザ情報変更', edit_user_registration_path %>
 </p>
-<p>Your are <%= current_user.email %></p>
+<p>You are <%= current_user.email %></p>
 <%= link_to '名刺', meishis_path %>
 <% else %>
 <p>
@@ -80,7 +80,8 @@
                                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %> |
                                 <%= link_to 'ユーザ情報変更', edit_user_registration_path %>
                                </p>
-                               <p>Your are <%= current_user.email %></p>
+                               <p>You are <%= current_user.email %></p>
+                               <p>Your id is <%= current_user.id %></p>
                                <%= link_to '名刺', meishis_path %>
 
                              <% else %>
