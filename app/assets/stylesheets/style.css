@@ -183,3 +183,9 @@ img { max-width: 100%; }
 
 }
 
+.d-inline-block {
+	width:345px;
+	height:209px;
+	margin: 5px;
+
+}
