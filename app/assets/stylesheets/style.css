@@ -189,3 +189,21 @@ img { max-width: 100%; }
 	margin: 5px;
 
 }
+#wrapper {
+    position: relative;
+    width: 100%;
+    border: 5px solid;
+}
+#wrapper:before {
+    content:"";
+    display: block;
+    padding-top: 60.4345604%;
+}
+#content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+}

@@ -4,6 +4,24 @@
 <% else %>
 <h3> あなたは名刺の作者ではない。 </h3>
 <% end %>
+<div id="wrapper">
+    <div id="content">
+    
+    <h1><%= @meishi.name %></h2>
+    
+    </div>
+</div>
+<br><br>
+<div id="wrapper">
+    <div id="content">
+    <br><br>
+    <div class="aa text-center">
+     <%= qrcode_tag meishis_show_path, module_size: 5 %><br>
+    </div>
+    </div>
+</div>
+<br><br><br><br>
+</div>
 <table class="table">
   <thead class="thead-dark">
     <tr>
