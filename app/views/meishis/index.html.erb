@@ -14,7 +14,7 @@
 
 
 <div class="container">
-  <ul class="nav nav-pills nav-fill">
+  <ul class="nav nav-pills nav-fill ">
     <li class="nav-item">
       <a class="nav-link " href="#">アカウント管理</a>
     </li>
@@ -38,6 +38,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">編集</a>
+
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">削除</a>
@@ -55,192 +56,203 @@
 
 
 
-<% @meishis.each do |meishi|%>
-<div class="d-inline-block p-2 bg-primary text-white embed-responsive-16by9">
-  <%= meishi.name %></h3>
-  
-</div>
-<% end %>
+  <% @meishis.each do |meishi|%>
+  <div class="d-inline-block p-2 bg-primary text-white embed-responsive-16by9">
 
+    <div class="hensyu">
+    
+      <a href="/meishis/#{meishi.id}/#{meishi.key}/#edit"></a><!-- ここのリンクを有効化させたい -->
+       <div class="form-check">
 
-<br><br><br><br><br><br>
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>ボタン</th>
-          <th>ボタン</th>
-        </tr>
-      </thead>
-      <% @meishis.each do |meishi|%>
-      <tr>
-        <th>
-          <%= meishi.id %>
-        </th>
-        <th>
-          <%= link_to meishi.name, "/meishis/#{meishi.id}/#{meishi.key}/" %>
-        </th>
-        <th>
-          <%= link_to '削除', meishi_path(meishi.id,meishi.key), method: :delete %>
-        </th>
-        <th>
-          <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit %>
-        </th>
-      </tr>
-      <% end %>
-    </table>
-
-    <br><br><br><br><br><br>
-
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>intro</th>
-          <th>account1</th>
-          <th>account2</th>
-          <th>account3</th>
-          <th>account4</th>
-          <th>key</th>
-          <th>created_user</th>
-        </tr>
-      </thead>
-      <% @meishis.each do |meishi|%>
-      <tr>
-        <th>
-          <%= meishi.id %>
-        </th>
-        <th>
-          <%= meishi.name %>
-        </th>
-        <th>
-          <%= meishi.intro %>
-        </th>
-        <th>
-          <%= meishi.account1_info %>
-        </th>
-        <th>
-          <%= meishi.account2_info %>
-        </th>
-        <th>
-          <%= meishi.account3_info %>
-        </th>
-        <th>
-          <%= meishi.account4_info %>
-        </th>
-        <th>
-          <%= meishi.key %>
-        </th>
-        <th>
-          <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit %>
-        </th>
-        <th>
-          <%= link_to '削除', meishi_path(meishi), method: :delete %>
-        </th>
-
-      </tr>
-      <th>
-      </th>
-      </tr>
-      <% end %>
-    </table>
-
-
-
-
-
-    <div class="container">
-
-      <!-- content -->
-      <div class="row" style="padding:60px 0 0 0">
-        <!-- left -->
-        <div class="col-md-3">
-          <!-- パネルで囲む -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              ようこそ
-            </div>
-            <!-- 敢えてbodyを作らないことで、メニューを詰める -->
-            <!-- <div class="panel-body"> -->
-            <ul class="nav flex-column 　">
-              <li><a href=""> アカウント管理</a></li>
-              <li><a href=""> SNS登録</a></li>
-              <li><a href=""> 使い方ガイド</a></li>
-
-              <li>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-            <!-- </div> -->
-          </div>
-        </div>
-
-        <!-- center -->
-        <div class="col-md-9">
-          <ul class="nav nav-pills nav-fill">
-            <li class="nav-item">
-              <%= link_to '名刺入力', new_meishi_path, class:'btn btn_primary'%>
-            </li>
-            <li class="nav-item"><a href="#">編集</a></li>
-            <li class="nav-item"><a href="#">削除</a></li>
-            <li class="nav-item"><a href="#">入れ替え</a></li>
-          </ul>
-
-          <div class="card-columns">
-            <% @meishis.each do |meishi|%>
-            <div class="container">
-
-              <div class="row">
-                <!-- left -->
-                <div class="d-inline-block p-2 bg-primary text-white col-md-3 text-center">
-                  <!-- パネルで囲む -->
-                  <div img="">
-                  </div>
-                  <%= meishi.name %>
-                </div>
-                <div class="col-md-9 d-inline-block p-2 bg-success text-white text-center">
-
-                  <%= meishi.intro %>
-                </div>
-
-              </div>
-
-
-
-
-              <div class="row">
-                <div class="d-inline-block p-2 bg-info text-white col-md-12">
-
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-3 text-center"><a href="<%= meishi.account1_info %>"><img src="<%= meishi.account1_photo %>">
-                          <%= meishi.account1_info %></a></div>
-                      <div class="col-md-3 text-center"><a href="<%= meishi.account2_info %>"><img src="<%= meishi.account2_photo %>">
-                          <%= meishi.account2_info %></a></div>
-                      <div class="col-md-3 text-center"><a href="<%= meishi.account3_info %>"><img src="<%= meishi.account3_photo %>">
-                          <%= meishi.account3_info %></a></div>
-                      <div class="col-md-3 text-center"><a href="<%= meishi.account4_info %>"><img src="<%= meishi.account4_photo %>">
-                          <%= meishi.account4_info %></a></div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <% end %>
-
-        </div>
-
+        <input class="form-check-input" type="radio" name="radio1" value="radio2">
+        <label class="form-check-label" for="radio1a"></label>
       </div>
-
-      <!-- right -->
+      <%= meishi.name %>
 
     </div>
 
   </div>
+  <% end %>
+
+
+  <br><br><br><br><br><br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>ボタン</th>
+        <th>ボタン</th>
+      </tr>
+    </thead>
+    <% @meishis.each do |meishi|%>
+    <tr>
+      <th>
+        <%= meishi.id %>
+      </th>
+      <th>
+        <%= link_to meishi.name, "/meishis/#{meishi.id}/#{meishi.key}/" %>
+      </th>
+      <th>
+        <%= link_to '削除', meishi_path(meishi.id,meishi.key), method: :delete %>
+      </th>
+      <th>
+        <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit %>
+      </th>
+    </tr>
+    <% end %>
+  </table>
+
+  <br><br><br><br><br><br>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>intro</th>
+        <th>account1</th>
+        <th>account2</th>
+        <th>account3</th>
+        <th>account4</th>
+        <th>key</th>
+        <th>created_user</th>
+      </tr>
+    </thead>
+    <% @meishis.each do |meishi|%>
+    <tr>
+      <th>
+        <%= meishi.id %>
+      </th>
+      <th>
+        <%= meishi.name %>
+      </th>
+      <th>
+        <%= meishi.intro %>
+      </th>
+      <th>
+        <%= meishi.account1_info %>
+      </th>
+      <th>
+        <%= meishi.account2_info %>
+      </th>
+      <th>
+        <%= meishi.account3_info %>
+      </th>
+      <th>
+        <%= meishi.account4_info %>
+      </th>
+      <th>
+        <%= meishi.key %>
+      </th>
+      <th>
+        <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit %>
+      </th>
+      <th>
+        <%= link_to '削除', meishi_path(meishi), method: :delete %>
+      </th>
+
+    </tr>
+    <th>
+    </th>
+    </tr>
+    <% end %>
+  </table>
+
+
+
+
+
+  <div class="container">
+
+    <!-- content -->
+    <div class="row" style="padding:60px 0 0 0">
+      <!-- left -->
+      <div class="col-md-3">
+        <!-- パネルで囲む -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            ようこそ
+          </div>
+          <!-- 敢えてbodyを作らないことで、メニューを詰める -->
+          <!-- <div class="panel-body"> -->
+          <ul class="nav flex-column 　">
+            <li><a href=""> アカウント管理</a></li>
+            <li><a href=""> SNS登録</a></li>
+            <li><a href=""> 使い方ガイド</a></li>
+
+            <li>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+          <!-- </div> -->
+        </div>
+      </div>
+
+      <!-- center -->
+      <div class="col-md-9">
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <%= link_to '名刺入力', new_meishi_path, class:'btn btn_primary'%>
+          </li>
+          <li class="nav-item"><a href="#">編集</a></li>
+          <li class="nav-item"><a href="#">削除</a></li>
+          <li class="nav-item"><a href="#">入れ替え</a></li>
+        </ul>
+
+        <div class="card-columns">
+          <% @meishis.each do |meishi|%>
+          <div class="container">
+
+            <div class="row">
+              <!-- left -->
+              <div class="d-inline-block p-2 bg-primary text-white col-md-3 text-center">
+                <!-- パネルで囲む -->
+                <div img="">
+                </div>
+                <%= meishi.name %>
+              </div>
+              <div class="col-md-9 d-inline-block p-2 bg-success text-white text-center">
+
+                <%= meishi.intro %>
+              </div>
+
+            </div>
+
+
+
+
+            <div class="row">
+              <div class="d-inline-block p-2 bg-info text-white col-md-12">
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-3 text-center"><a href="<%= meishi.account1_info %>"><img src="<%= meishi.account1_photo %>">
+                        <%= meishi.account1_info %></a></div>
+                    <div class="col-md-3 text-center"><a href="<%= meishi.account2_info %>"><img src="<%= meishi.account2_photo %>">
+                        <%= meishi.account2_info %></a></div>
+                    <div class="col-md-3 text-center"><a href="<%= meishi.account3_info %>"><img src="<%= meishi.account3_photo %>">
+                        <%= meishi.account3_info %></a></div>
+                    <div class="col-md-3 text-center"><a href="<%= meishi.account4_info %>"><img src="<%= meishi.account4_photo %>">
+                        <%= meishi.account4_info %></a></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+    <!-- right -->
+
+  </div>
+
+</div>
 </div>
 ->

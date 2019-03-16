@@ -187,6 +187,7 @@ img { max-width: 100%; }
 	width:345px;
 	height:209px;
 	margin: 5px;
+	border: 1px solid black;
 
 }
 #wrapper {
@@ -213,3 +214,20 @@ img { max-width: 100%; }
 
 	
 }
+.hensyu {
+	position: relative;
+	width:345px;
+	height:209px;
+	margin: 5px;
+	border: 1px solid black;
+	right: 11px;
+	bottom: 11px;
+  }
+  .hensyu a {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  }
