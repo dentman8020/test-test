@@ -207,3 +207,9 @@ img { max-width: 100%; }
     right: 0;
     background-color: white;
 }
+#nav-pills{
+    border: 1px solid #007dbc;
+    background-color: #f1faff;
+
+	
+}
