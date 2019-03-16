@@ -53,15 +53,17 @@
   </div>
 
   <br><br><br>
+ <% @meishis.each do |meishi|%>
+<svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81"><defs><style>.cls-1{fill:#b5b5b6;}.cls-2{font-size:19px;}.cls-2,.cls-3,.cls-4{fill:#231815;}.cls-2,.cls-3{font-family:KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;}.cls-3{font-size:12px;}.cls-5{fill:#c30d23;}</style></defs><title>テスト名刺２</title><rect class="cls-1" x="-2.78" width="266.74" height="158.83" transform="translate(263.96 212.81) rotate(180)"/><text class="cls-2" transform="translate(20.84 88.85)"><%= meishi.name %></text><text class="cls-2" transform="translate(149.12 90.6)"> <%= meishi.intro %></text><text class="cls-2" transform="translate(20.84 176.93)">アイ<tspan x="0" y="18">コン</tspan></text><text x="2.78" y="53.98"/><text class="cls-3" transform="translate(120.46 116.11)">テストテストテスト</text><rect class="cls-4" x="201.54" y="167.14" width="39.15" height="34.25"/><rect class="cls-5" x="97.21" y="164.35" width="42.12" height="32.5"/><text x="2.78" y="53.98"/><text x="2.78" y="53.98"/><text x="2.78" y="53.98"/></svg>
 
 
-
-  <% @meishis.each do |meishi|%>
   <div class="d-inline-block p-2 bg-primary text-white embed-responsive-16by9">
 
-    <div class="hensyu">
+    
     
       <a href="/meishis/#{meishi.id}/#{meishi.key}/#edit"></a><!-- ここのリンクを有効化させたい -->
+      <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit, class:'hensyu '%>
+             <%= link_to '名刺入力', new_meishi_path, class:'btn btn_primary'%>
        <div class="form-check">
 
         <input class="form-check-input" type="radio" name="radio1" value="radio2">
@@ -69,8 +71,7 @@
       </div>
       <%= meishi.name %>
 
-    </div>
-
+    
   </div>
   <% end %>
 
