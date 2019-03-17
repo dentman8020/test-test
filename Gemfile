@@ -69,4 +69,4 @@ gem 'html2slim'
 gem 'bootstrap'
 gem 'mini_racer'
 gem 'rqrcode'
-
+gem 'webpacker' 
