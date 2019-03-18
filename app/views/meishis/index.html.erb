@@ -38,6 +38,7 @@
   <br><br><br>
 
   <div class="container">
+
     <ul class="nav nav-pills nav-fill">
       <li class="nav-item">
         <%= link_to '名刺入力', new_meishi_path, class:'btn btn_primary'%>
@@ -48,6 +49,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">削除</a>
+      
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">入れ替え</a>
@@ -62,10 +64,13 @@
 
   <div class="row">
 
-
-    <% @meishis.each do |meishi|%>
+ <% @meishis.each do |meishi|%>
+    
     <div class="col-md-3 ">
       <div id="list">
+    <%= link_to '削除', meishi_path(meishi), method: :delete %>
+<input type="radio" id="target" name="trigger" value="check" >
+
 
         <svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81">
           <defs>
@@ -115,10 +120,7 @@
 
     <% end %>
   <script>
-  let sortable = Sortable.create(hoge, {
-    group: "list",
-    animation: 100
-});
+
   </script>
   <br><br><br><br><br><br>
     <br><br><br><br><br><br>

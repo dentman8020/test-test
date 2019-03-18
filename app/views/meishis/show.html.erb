@@ -15,24 +15,9 @@
 <%= link_to '一覧に戻る', meishis_path %>
     <svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81"><defs><style>.cls-1{fill:#b5b5b6;}.cls-2{font-size:19px;}.cls-2,.cls-3,.cls-4{fill:#231815;}.cls-2,.cls-3{font-family:KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;}.cls-3{font-size:12px;}.cls-5{fill:#c30d23;}</style></defs><title>テスト名刺２</title><rect class="cls-1" x="-2.78" width="266.74" height="158.83" transform="translate(263.96 212.81) rotate(180)"/><text class="cls-2" transform="translate(20.84 88.85)"><%=  @meishi.name %></text><text class="cls-2" transform="translate(149.12 90.6)"> <%= @meishi.intro %></text><text class="cls-2" transform="translate(20.84 176.93)">アイ<tspan x="0" y="18">コン</tspan></text><text x="2.78" y="53.98"/><text class="cls-3" transform="translate(120.46 116.11)">テストテストテスト</text><rect class="cls-4" x="201.54" y="167.14" width="39.15" height="34.25"/><rect class="cls-5" x="97.21" y="164.35" width="42.12" height="32.5"/><text x="2.78" y="53.98"/><text x="2.78" y="53.98"/><text x="2.78" y="53.98"/></svg>
 
-<div id="wrapper">
 
-    <div id="content">
 
-    <h1><%= @meishi.name %></h2>
-    
-    </div>
-</div>
-<br><br>
-<div id="wrapper">
-    <div id="content">
-    <br><br>
-    <div class="aa text-center">
-     <%= qrcode_tag meishis_show_path, module_size: 5 %><br>
-    </div>
-    </div>
-</div>
-<br><br><br><br>
+<br>
 </div>
 <table class="table">
   <thead class="thead-dark">
@@ -89,58 +74,10 @@
 </table>
 
 <%= link_to '一覧に戻る', meishis_path %>
-<div class="container">
-
-  <div class="row">
-    <!-- left -->
-    <div class="d-inline-block p-2 bg-primary text-white col-md-3 text-center">
-      <!-- パネルで囲む -->
-      <div img="">
 
 
 
-      </div>
-      <%= @meishi.name %>
 
-
-    </div>
-    <div class="col-md-9 d-inline-block p-2 bg-success text-white text-center">
-
-      <%= @meishi.intro %>
-    </div>
-
-  </div>
-</div>
-
-<div class="container">
-
-  <div class="row">
-    <div class="d-inline-block p-2 bg-info text-white col-md-12">
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 text-center"><a href="<%= @meishi.account1_info %>"><img src="<%= @meishi.account1_photo %>">
-              <%= @meishi.account1_info %></a></div>
-          <div class="col-md-3 text-center"><a href="<%= @meishi.account2_info %>"><img src="<%= @meishi.account2_photo %>">
-              <%= @meishi.account2_info %></a></div>
-          <div class="col-md-3 text-center"><a href="<%= @meishi.account3_info %>"><img src="<%= @meishi.account3_photo %>">
-              <%= @meishi.account3_info %></a></div>
-          <div class="col-md-3 text-center"><a href="<%= @meishi.account4_info %>"><img src="<%= @meishi.account4_photo %>">
-              <%= @meishi.account4_info %></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container">
-
-  <div class="row">
-    <div class="d-inline-block p-2 bg-info text-white col-md-12 text-center">
-      <%= qrcode_tag meishis_show_path, module_size: 5 %><br>
-    </div>
-  </div>
-</div>
-</div>
 
 <h1>About#index</h1>
 <p>Find me in app/views/about/index.html.erb</p>
