@@ -68,7 +68,9 @@
     
     <div class="col-md-3 ">
       <div id="list">
-    <%= link_to '削除', meishi_path(meishi), method: :delete %>
+    <%= link_to '削除', meishi_path(meishi), method: :delete %>   ------------   
+    
+    <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit %>-----------
 <input type="radio" id="target" name="trigger" value="check" >
 
 
