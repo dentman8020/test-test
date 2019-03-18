@@ -1,0 +1,79 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+      
+    
+<!-- vue.js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+<!-- sortable.js -->
+<script src="//cdn.jsdelivr.net/npm/sortablejs@1.7.0/Sortable.min.js"></script>
+<!-- vue.draggable -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.16.0/vuedraggable.min.js"></script>
+
+
+</head>
+<body>
+
+<script>
+new Vue({
+  el: "#main",
+  data: {
+    items:[
+      {no:1, name:'キャベツ', categoryNo:'1'},
+      {no:2, name:'ステーキ', categoryNo:'2'},
+      {no:3, name:'リンゴ', categoryNo:'3'},
+      {no:4, name:'冷蔵庫', categoryNo:'4'},
+      {no:5, name:'きゅうり', categoryNo:'1'},
+      {no:6, name:'ハンバーグ', categoryNo:'2'},
+      {no:7, name:'バナナ', categoryNo:'3'},
+      {no:8, name:'PS4', categoryNo:'4'}
+    ]
+  },
+  computed: {
+    myList: {
+      get() {
+         return this.items;
+      },
+      set(value) {
+         this.items = value;
+      }
+    }
+  }
+});</script>
+
+
+
+        <ul id="main">
+                <draggable v-modal="myList">
+                  <li v-for="item, index in myList" :key="item.no">{{item.name}}-(No.{{item.no}})</li>
+                </draggable>
+               </ul>
+
+
+               <script>
+                    new Vue({
+                      el: "#main",
+                      data: {
+                        items:[
+                          {no:1, name:'キャベツ', categoryNo:'1'},
+                          {no:2, name:'ステーキ', categoryNo:'2'},
+                          {no:3, name:'リンゴ', categoryNo:'3'},
+                          {no:4, name:'冷蔵庫', categoryNo:'4'},
+                          {no:5, name:'きゅうり', categoryNo:'1'},
+                          {no:6, name:'ハンバーグ', categoryNo:'2'},
+                          {no:7, name:'バナナ', categoryNo:'3'},
+                          {no:8, name:'PS4', categoryNo:'4'}
+                        ]
+                      },
+                      computed: {
+                        myList: {
+                          get() {
+                             return this.items;
+                          },
+                          set(value) {
+                             this.items = value;
+                          }
+                        }
+                      }
+                    });</script>
+</body>
