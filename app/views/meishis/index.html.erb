@@ -10,6 +10,40 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.16.0/vuedraggable.min.js"></script>
 
 </head>
+   <div id="app">
+        <draggable :list="items" class="dragarea">
+          <div v-for="item in items" class="item">
+        
+            {{item.text}}
+          </div>
+        </draggable>
+        
+      </div>
+<script>
+  var main = new Vue({
+  el: '#app',
+  data: {
+    items: [{
+      text:  "aa"
+
+
+
+
+     
+    }, {
+      text: 'list2'
+    }, {
+      text: 'list3'
+    }, {
+      text: 'list4'
+    }, {
+      text: 'list5'
+    }, ]
+  }
+});
+   </script>
+
+
 
 <h1>名刺一覧</h1>
 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'btn btn_primary'%> |
@@ -17,9 +51,9 @@
 
 <br><br><br>
 
+<form method="post" id="example">
 
-
-<div class="container">
+ <div class="container">
   <ul class="nav nav-pills nav-fill ">
     <li class="nav-item">
       <a class="nav-link " href="#">アカウント管理</a>
@@ -45,6 +79,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">編集</a>
+       
+      <input type="submit" value="送信する">
+
 
       </li>
       <li class="nav-item">
@@ -71,9 +108,31 @@
     <%= link_to '削除', meishi_path(meishi), method: :delete %>   ------------   
     
     <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit %>-----------
-<input type="radio" id="target" name="trigger" value="check" >
+    <fieldset form="example">
+ <input type="radio"  name="trigger" value="<%= meishi.id %>" >
+</form>
+
+<script>
+
+var element = document.getElementById( "example" ) ;
 
 
+var radioNodeList = element.trigger ;
+
+
+var a = radioNodeList.value ;
+
+if ( a === "" ) {
+	
+} else {
+	
+	console.log( a ) ;
+  var b = document.getElementsById( a ).item(0);
+}
+
+
+</script>
+</fieldset>
         <svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81">
           <defs>
             <style>
