@@ -1,0 +1,47 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+      
+    
+<!-- vue.js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+<!-- sortable.js -->
+<script src="//cdn.jsdelivr.net/npm/sortablejs@1.7.0/Sortable.min.js"></script>
+<!-- vue.draggable -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.16.0/vuedraggable.min.js"></script>
+
+
+</head>
+<body>
+  ↓フォーム
+  <form name="meishi_list">
+
+      <input type="radio" name="meishi_<%= meishi.id%>_radiobox" value=""><br/>
+      <input type="text" value="abc"><br/><br/>
+      
+      <input type="radio" name="meishi_2_radiobox" value=""><br/>
+      <input type="text" value="abc"><br/><br/>
+      <input type="radio" name="meishi_3_radiobox" value=""><br/>
+      <input type="text" value="abc"><br/><br/>
+      <input type="submit" id="chan">
+  </form>
+  ↑フォーム
+  <script>
+      console.log("a") ;
+      var btn = document.getElementById('chan');
+  
+      btn.addEventListener('click', function() {
+        
+        if(document.meishi_list.meishi_<%= meishi.id %>_radiobox.value=="checked")
+        {alert("1ばいばい");location.href=’meishi_path(meishi.id,meishi.key)#delete’;}
+
+        if(document.meishi_list.meishi_2_radiobox.value=="checked")
+        {alert("2ばいばい");}
+        if(document.meishi_list.meishi_3_radiobox.value=="checked")
+        {alert("3ばいばい");}
+            
+        //submit()でフォームの内容を送信
+        redict~~~~~
+      })
+    </script>
+</body>
