@@ -109,8 +109,8 @@
           <%= link_to '削除', meishi_path(meishi), method: :delete %> ------------
 
           <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit %>-----------
-          <fieldset form="example">
-            <input type="radio" name="meishi_<%= meishi.id%>_radiobox" value="">
+        
+            <input type="radio"  name="meishi_radiobox" value="<%= meishi.id %>">
 
 
 
@@ -166,18 +166,15 @@
 
 <% end %>
 <script>
-  <% @meishis.each do |meishi|%>
   var btn = document.getElementById('chan');
 
   btn.addEventListener('click', function () {
 
-        if (document.meishi_list.meishi_<%= meishi.id %>_radiobox.value == "checked") {
-          alert("<%= meishi.id %>ばいばい");
-          <% meishi_path(meishi), method: :delete %>;
-        }
-
-
-        <% end %>
+  <% @meishis.each do |meishi|%>
+        if (document.meishi_list.meishi_radiobox.value=="<%= meishi.id %>") {
+          alert("<%= meishi.id %>ばいばい");}        
+   <% end %>
+    })
 </script>
 <br><br><br><br><br><br>
 <br><br><br><br><br><br>
