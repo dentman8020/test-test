@@ -79,14 +79,14 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">編集</a>
-
-          <input type="submit" value="送信する">
+          <input type="submit" id="chan">
+        
 
 
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">削除</a>
-          <input type="submit" id="chan">
+         
 
         </li>
         <li class="nav-item">
@@ -172,7 +172,13 @@
 
   <% @meishis.each do |meishi|%>
         if (document.meishi_list.meishi_radiobox.value=="<%= meishi.id %>") {
-          alert("<%= meishi.id %>ばいばい");}        
+          alert("<%= meishi.id %>ばいばい");
+            
+          alert("<%= meishi.id %>ばいばい");
+         window.open( "/meishis/<%= meishi.id %>/<%= meishi.key%>/#edit");
+               
+  
+          }        
    <% end %>
     })
 </script>
