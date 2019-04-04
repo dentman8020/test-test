@@ -86,7 +86,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">削除</a>
-         
+          <input type="submit" id="chan2">
 
         </li>
         <li class="nav-item">
@@ -170,12 +170,25 @@
 
   btn.addEventListener('click', function () {
 
-  <% @meishis.each do |meishi|%>
+  <% @meishis.each do |meishi| %>
         if (document.meishi_list.meishi_radiobox.value=="<%= meishi.id %>") {
           alert("<%= meishi.id %>ばいばい");
-            
-          alert("<%= meishi.id %>ばいばい");
+        
          window.open( "/meishis/<%= meishi.id %>/<%= meishi.key%>/#edit");
+               
+  
+          }        
+   <% end %>
+    })
+      var btn = document.getElementById('chan2');
+
+  btn.addEventListener('click', function () {
+
+  <% @meishis.each do |meishi| %>
+        if (document.meishi_list.meishi_radiobox.value=="<%= meishi.id %>") {
+          alert("<%= meishi.id %>ばいばい");
+        
+        location.href( "<% meishi_path(meishi.id,meishi.key) %>");
                
   
           }        
