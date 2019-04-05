@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'meishis/index'
   get 'meishis/show'
   get 'meishis/new'
+  get 'meishis/guide'
   get 'meishis/edit'
   post 'meishis/:id/:url/#edit' => 'meishis#edit'
   post 'meishis/:id/:url' => 'meishis#show'
