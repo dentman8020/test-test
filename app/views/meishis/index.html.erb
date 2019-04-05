@@ -102,15 +102,16 @@
 
     <div class="row">
 
-      <% @meishis.each do |meishi|%>
+     <% @meishis.each do |meishi|%>
 
       <div class="col-md-3 ">
+   
         <div id="list">
           <%= link_to '削除', meishi_path(meishi), method: :delete %> ------------
 
           <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit %>-----------
         
-            <input type="radio"  name="meishi_radiobox" value="<%= meishi.id %>">
+            <input type="radio"  name="meishi_radiobox" value="<%= meishi.id %>" checked>
 
 
 
@@ -162,9 +163,11 @@
 
 </div>
 </div>
+<% end %>
+
 </div>
 
-<% end %>
+
 <script>
   var btn = document.getElementById('chan');
 
