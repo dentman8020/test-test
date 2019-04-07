@@ -1,9 +1,7 @@
-
-
-  <head>
+<head>
   <%= javascript_pack_tag 'hello_vue' %>
 
-  </head>
+</head>
 
 
 <h2>名刺の表示のテスト <%= current_user.id %> </h2>
@@ -13,7 +11,212 @@
 <h3> あなたは名刺の作者ではない。 </h3>
 <% end %>
 <%= link_to '一覧に戻る', meishis_path %>
-    <svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81"><defs><style>.cls-1{fill:#b5b5b6;}.cls-2{font-size:19px;}.cls-2,.cls-3,.cls-4{fill:#231815;}.cls-2,.cls-3{font-family:KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;}.cls-3{font-size:12px;}.cls-5{fill:#c30d23;}</style></defs><title>テスト名刺２</title><rect class="cls-1" x="-2.78" width="266.74" height="158.83" transform="translate(263.96 212.81) rotate(180)"/><text class="cls-2" transform="translate(20.84 88.85)"><%=  @meishi.name %></text><text class="cls-2" transform="translate(149.12 90.6)"> <%= @meishi.intro %></text><text class="cls-2" transform="translate(20.84 176.93)">アイ<tspan x="0" y="18">コン</tspan></text><text x="2.78" y="53.98"/><text class="cls-3" transform="translate(120.46 116.11)">テストテストテスト</text><rect class="cls-4" x="201.54" y="167.14" width="39.15" height="34.25"/><rect class="cls-5" x="97.21" y="164.35" width="42.12" height="32.5"/><text x="2.78" y="53.98"/><text x="2.78" y="53.98"/><text x="2.78" y="53.98"/></svg>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 bg-primary ">
+      <h3>名刺の名前（”フリーランス用”など、利用ユーザーのみ表記）</h3>
+    </div>
+  </div>
+  <br>
+  <div class="center ">
+
+    <div class="row">
+      <div class="col-md-3 bg-danger">
+
+        <h2>写真</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+
+      </div>
+
+      <div class="col-md-9 bg-info">
+        <br>
+        <h4>・アカウント名</h4>
+        <br>
+        <h4>・連絡先（DM、電話番号など）</h4>
+        <br>
+        <h4>・一言コメント（”ご依頼の返信は２.３日頂きます”など）</h4>
+        <br>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12 bg-warning">
+
+      <h3>自己紹介の追加</h3>
+      <br> <br> <br> <br>
+
+    </div>
+  </div>
+  ↑友人用なら不必要だが、仕事用に情報を足したい人は追加できるようにしたい。
+  <br>
+  <div class="row">
+    <div class="col-md-3 bg-success text-center">
+<br> <br>
+      <h3>insta</h3>
+      <br> <br> 
+    </div>
+    <div class="col-md-3 bg-success text-center">
+<br> <br>
+      <h3>LINE</h3>
+      <br> <br> 
+    </div>
+    <div class="col-md-3 bg-success text-center">
+<br> <br>
+      <h3>Twitter</h3>
+      <br> <br> 
+    </div>
+    <div class="col-md-3 bg-success text-center">
+<br> <br>
+      <h3>個人サイト</h3>
+      <br> <br> <br> <br>
+    </div>
+  </div>
+↑横並びか縦並びにするか、アイコンかリンク埋め込みにするか
+<div class="row">
+    <div class="col-md-6 bg-primary ">
+      <svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b5b5b6;
+      }
+
+      .cls-2 {
+        font-size: 19px;
+      }
+
+      .cls-2,
+      .cls-3,
+      .cls-4 {
+        fill: #231815;
+      }
+
+      .cls-2,
+      .cls-3 {
+        font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;
+      }
+
+      .cls-3 {
+        font-size: 12px;
+      }
+
+      .cls-5 {
+        fill: #c30d23;
+      }
+    </style>
+  </defs>
+  <title>テスト名刺２</title>
+  <rect class="cls-1" x="-2.78" width="266.74" height="158.83" transform="translate(263.96 212.81) rotate(180)" /><text
+    class="cls-2" transform="translate(20.84 88.85)"><%=  @meishi.name %></text><text class="cls-2"
+    transform="translate(149.12 90.6)"> <%= @meishi.intro %></text><text class="cls-2"
+    transform="translate(20.84 176.93)">アイ<tspan x="0" y="18">コン</tspan></text><text x="2.78" y="53.98" /><text
+    class="cls-3" transform="translate(120.46 116.11)">テストテストテスト</text>
+  <rect class="cls-4" x="201.54" y="167.14" width="39.15" height="34.25" />
+  <rect class="cls-5" x="97.21" y="164.35" width="42.12" height="32.5" /><text x="2.78" y="53.98" /><text x="2.78"
+    y="53.98" /><text x="2.78" y="53.98" />
+</svg>
+
+    </div>
+    <div class="col-md-6 bg-primary ">
+      <svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b5b5b6;
+      }
+
+      .cls-2 {
+        font-size: 19px;
+      }
+
+      .cls-2,
+      .cls-3,
+      .cls-4 {
+        fill: #231815;
+      }
+
+      .cls-2,
+      .cls-3 {
+        font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;
+      }
+
+      .cls-3 {
+        font-size: 12px;
+      }
+
+      .cls-5 {
+        fill: #c30d23;
+      }
+    </style>
+  </defs>
+  <title>テスト名刺２</title>
+  <rect class="cls-1" x="-2.78" width="266.74" height="158.83" transform="translate(263.96 212.81) rotate(180)" /><text
+    class="cls-2" transform="translate(20.84 88.85)"><%=  @meishi.name %></text><text class="cls-2"
+    transform="translate(149.12 90.6)"> <%= @meishi.intro %></text><text class="cls-2"
+    transform="translate(20.84 176.93)">アイ<tspan x="0" y="18">コン</tspan></text><text x="2.78" y="53.98" /><text
+    class="cls-3" transform="translate(120.46 116.11)">テストテストテスト</text>
+  <rect class="cls-4" x="201.54" y="167.14" width="39.15" height="34.25" />
+  <rect class="cls-5" x="97.21" y="164.35" width="42.12" height="32.5" /><text x="2.78" y="53.98" /><text x="2.78"
+    y="53.98" /><text x="2.78" y="53.98" />
+</svg>
+<br>
+<br>
+<br>
+    </div>
+  </div>
+↑実際に情報が反映された名刺のプレビュー、クリックして購入画面に飛ばす（利用ユーザーのみの表示）
+
+</div>
+
+
+
+<svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b5b5b6;
+      }
+
+      .cls-2 {
+        font-size: 19px;
+      }
+
+      .cls-2,
+      .cls-3,
+      .cls-4 {
+        fill: #231815;
+      }
+
+      .cls-2,
+      .cls-3 {
+        font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;
+      }
+
+      .cls-3 {
+        font-size: 12px;
+      }
+
+      .cls-5 {
+        fill: #c30d23;
+      }
+    </style>
+  </defs>
+  <title>テスト名刺２</title>
+  <rect class="cls-1" x="-2.78" width="266.74" height="158.83" transform="translate(263.96 212.81) rotate(180)" /><text
+    class="cls-2" transform="translate(20.84 88.85)"><%=  @meishi.name %></text><text class="cls-2"
+    transform="translate(149.12 90.6)"> <%= @meishi.intro %></text><text class="cls-2"
+    transform="translate(20.84 176.93)">アイ<tspan x="0" y="18">コン</tspan></text><text x="2.78" y="53.98" /><text
+    class="cls-3" transform="translate(120.46 116.11)">テストテストテスト</text>
+  <rect class="cls-4" x="201.54" y="167.14" width="39.15" height="34.25" />
+  <rect class="cls-5" x="97.21" y="164.35" width="42.12" height="32.5" /><text x="2.78" y="53.98" /><text x="2.78"
+    y="53.98" /><text x="2.78" y="53.98" />
+</svg>
 
 
 
@@ -31,46 +234,54 @@
       <th>account4</th>
       <th>key</th>
       <th>created_user</th>
-      </tr>
+    </tr>
   </thead>
-    <tr>
-      <th><%= @meishi.id %></th>
-      <th><%= @meishi.name %></th>
-      <th><%= @meishi.intro %></th>
-      <th><%= @meishi.account1_info %></th>
-      <th><%= @meishi.account2_info %></th>
-      <th><%= @meishi.account3_info %></th>
-      <th><%= @meishi.account4_info %></th>
-      <th><%= @meishi.key %></th>
-      </tr>
-    <tr>
-      <th><%= @meishi.id %>-img</th>
-      <th></th>
-      <th></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account1_info %>"><img src="<%= @meishi.account1_photo %>"></a></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account2_info %>"><img src="<%= @meishi.account2_photo %>"></a></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account3_info %>"><img src="<%= @meishi.account3_photo %>"></a></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account4_info %>"><img src="<%= @meishi.account4_photo %>"></a></th>
-      <th><%= @meishi.created_user %></th>
-    </tr>
-    <tr>
-      <th><%= @meishi.id %>-link</th>
-      <th></th>
-      <th></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account1_info %>"><%= @meishi.account1_info %></a></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account2_info %>"><%= @meishi.account2_info %></a></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account3_info %>"><%= @meishi.account3_info %></a></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account4_info %>"><%= @meishi.account4_info %></a></th>
-    </tr>
-    <tr>
-      <th><%= @meishi.id %>-both</th>
-      <th></th>
-      <th></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account1_info %>"><img src="<%= @meishi.account1_photo %>"></a><%= @meishi.account1_info %></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account2_info %>"><img src="<%= @meishi.account2_photo %>"></a><%= @meishi.account2_info %></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account3_info %>"><img src="<%= @meishi.account3_photo %>"></a><%= @meishi.account3_info %></th>
-      <th vertical-align="middle"><a href="<%= @meishi.account4_info %>"><img src="<%= @meishi.account4_photo %>"></a><%= @meishi.account4_info %></th>
-    </tr>
+  <tr>
+    <th><%= @meishi.id %></th>
+    <th><%= @meishi.name %></th>
+    <th><%= @meishi.intro %></th>
+    <th><%= @meishi.account1_info %></th>
+    <th><%= @meishi.account2_info %></th>
+    <th><%= @meishi.account3_info %></th>
+    <th><%= @meishi.account4_info %></th>
+    <th><%= @meishi.key %></th>
+  </tr>
+  <tr>
+    <th><%= @meishi.id %>-img</th>
+    <th></th>
+    <th></th>
+    <th vertical-align="middle"><a href="<%= @meishi.account1_info %>"><img src="<%= @meishi.account1_photo %>"></a>
+    </th>
+    <th vertical-align="middle"><a href="<%= @meishi.account2_info %>"><img src="<%= @meishi.account2_photo %>"></a>
+    </th>
+    <th vertical-align="middle"><a href="<%= @meishi.account3_info %>"><img src="<%= @meishi.account3_photo %>"></a>
+    </th>
+    <th vertical-align="middle"><a href="<%= @meishi.account4_info %>"><img src="<%= @meishi.account4_photo %>"></a>
+    </th>
+    <th><%= @meishi.created_user %></th>
+  </tr>
+  <tr>
+    <th><%= @meishi.id %>-link</th>
+    <th></th>
+    <th></th>
+    <th vertical-align="middle"><a href="<%= @meishi.account1_info %>"><%= @meishi.account1_info %></a></th>
+    <th vertical-align="middle"><a href="<%= @meishi.account2_info %>"><%= @meishi.account2_info %></a></th>
+    <th vertical-align="middle"><a href="<%= @meishi.account3_info %>"><%= @meishi.account3_info %></a></th>
+    <th vertical-align="middle"><a href="<%= @meishi.account4_info %>"><%= @meishi.account4_info %></a></th>
+  </tr>
+  <tr>
+    <th><%= @meishi.id %>-both</th>
+    <th></th>
+    <th></th>
+    <th vertical-align="middle"><a href="<%= @meishi.account1_info %>"><img
+          src="<%= @meishi.account1_photo %>"></a><%= @meishi.account1_info %></th>
+    <th vertical-align="middle"><a href="<%= @meishi.account2_info %>"><img
+          src="<%= @meishi.account2_photo %>"></a><%= @meishi.account2_info %></th>
+    <th vertical-align="middle"><a href="<%= @meishi.account3_info %>"><img
+          src="<%= @meishi.account3_photo %>"></a><%= @meishi.account3_info %></th>
+    <th vertical-align="middle"><a href="<%= @meishi.account4_info %>"><img
+          src="<%= @meishi.account4_photo %>"></a><%= @meishi.account4_info %></th>
+  </tr>
 </table>
 
 <%= link_to '一覧に戻る', meishis_path %>
@@ -81,3 +292,4 @@
 
 <h1>About#index</h1>
 <p>Find me in app/views/about/index.html.erb</p>
+
