@@ -24,7 +24,10 @@
     <div class="row">
       <div class="col-md-3 bg-danger">
 
-        <h2>写真</h2>
+        <p>
+<strong>Picture:</strong>
+<%= image_tag(@meishi.picture_url) if @meishi.picture.present? %>
+</p>
         <br>
         <br>
         <br>

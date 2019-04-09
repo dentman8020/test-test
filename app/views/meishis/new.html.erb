@@ -1,112 +1,117 @@
 <h1> 名刺の新規登録</h1>
 <%= link_to '一覧', meishis_path, class: 'nav-link' %>
 <div class="container">
-  <div class="row">
-    <div class="col-md-6  ">
-<%= form_with model: @meishi, local: true do |f| %>
+    <div class="row">
+        <div class="col-md-6  ">
+            <%= form_with model: @meishi, local: true do |f| %>
 
 
- <div class="form-group"></div>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control', id: 'meishi_name' ,:placeholder => "name"%>
-   <div class="form-group"></div>
-  <%= f.label :address %>
-  <%= f.text_field :address, class: 'form-control', id: 'meishi_address',:placeholder => "Enter your email..."%>
- <div class="form-group"></div>
-  <%= f.label :一言　%>
-  <%= f.text_field :intro, class: 'form-control', id: 'meishi_intro',:placeholder => "Hello"%>
-  <div class="form-group"></div>
-  <%= f.label :自己紹介２ %>
-  <%= f.text_field :intro2, class: 'form-control', id: 'meishi_intro2',:placeholder => "I'm human" %>
-  <div class="form-group"></div>
-  <%= f.label :緊急連絡先 %>
-  <%= f.text_field :number, class: 'form-control', id: 'meishi_number' ,:placeholder => "090 0000 0000"%>
-  <div class="form-group"></div>
-  <img src="https://img.icons8.com/color/48/000000/twitter-squared.png">
-  <%= f.text_field :Twitter, class: 'form-control', id: 'meishi_twitter' ,:placeholder => "example.com"%>
-   <div class="form-group"></div>
-  <img src="https://img.icons8.com/color/48/000000/instagram-new.png">
-  <%= f.text_field :insta, class: 'form-control', id: 'meishi_insta' ,:placeholder => "example.com"%>
-   <div class="form-group"></div>
-  
-  <img src="https://img.icons8.com/color/48/000000/facebook.png">
-  <%= f.text_field :facebook, class: 'form-control', id: 'meishi_facebook' ,:placeholder => "example.com"%>
-   <div class="form-group"></div>
- <img src="https://img.icons8.com/color/48/000000/line-me.png">
-  <%= f.text_field :line, class: 'form-control', id: 'meishi_line' ,:placeholder => "example.com"%>
-   <div class="form-group"></div>
-  <img src="https://img.icons8.com/color/48/000000/linkedin.png">
-  <%= f.text_field :linkedln, class: 'form-control', id: 'meishi_linkedln' ,:placeholder => "example.com"%>
-  <div class="form-group"></div>
-  <%= f.label :pixiv %>
-  <%= f.text_field :pixiv, class: 'form-control', id: 'meishi_pixiv',:placeholder => "example.com" %>
-  <div class="form-group"></div>
-<img src="https://img.icons8.com/color/48/000000/youtube-play.png">
-  <%= f.text_field :youtube, class: 'form-control', id: 'meishi_youtube',:placeholder => "example.com" %>
-  <div class="form-group"></div>
-  <img src="https://img.icons8.com/color/48/000000/web.png">
-  <%= f.text_field :website1, class: 'form-control', id: 'meishi_website1',:placeholder => "example.com" %>
-  <div class="form-group"></div>
- <img src="https://img.icons8.com/color/48/000000/home.png">
-  <%= f.text_field :website2, class: 'form-control', id: 'meishi_website2' ,:placeholder => "example.com"%>
-  <div class="form-group"></div>
-  <%= f.label :アカウント1 %>
-  <%= f.text_field :account1_info, class: 'form-control', id: 'meishi_account1_info' ,:placeholder => "example.com"%>
-  <div class="form-group"></div>
-  <%= f.label :アカウント2 %>
-  <%= f.text_field :account2_info, class: 'form-control', id: 'meishi_account2_info' ,:placeholder => "example.com"%>
-  <div class="form-group"></div>
-  <%= f.label :アカウント3 %>
-  <%= f.text_field :account3_info, class: 'form-control', id: 'meishi_account3_info' ,:placeholder => "example.com"%>
-  <div class="form-group"></div>
-  <%= f.label :アカウント4 %>
-  <%= f.text_field :account4_info, class: 'form-control', id: 'meishi_account4_info',:placeholder => "example.com" %>
- <%= f.submit nil, class: 'btn btn-primary' %>
- <% end %>
- </div>
- <div class="col-md-6  ">
- <svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #b5b5b6;
-      }
+            <div class="form-group"></div>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control', id: 'meishi_name' ,:placeholder => "name"%>
+            <div class="form-group">
+            <%= f.label :picture %>
+            <%= f.file_field :picture, class: 'form-control', id: 'meishi_picture' %></div>
+            <div class="form-group"></div>
+            <%= f.label :address %>
+            <%= f.text_field :address, class: 'form-control', id: 'meishi_address',:placeholder => "Enter your email..."%>
+            <div class="form-group"></div>
+            <%= f.label :一言　%>
+            <%= f.text_field :intro, class: 'form-control', id: 'meishi_intro',:placeholder => "Hello"%>
+            <div class="form-group"></div>
+            <%= f.label :自己紹介２ %>
+            <%= f.text_field :intro2, class: 'form-control', id: 'meishi_intro2',:placeholder => "I'm human" %>
+            <div class="form-group"></div>
+            <%= f.label :緊急連絡先 %>
+            <%= f.text_field :number, class: 'form-control', id: 'meishi_number' ,:placeholder => "090 0000 0000"%>
+            <div class="form-group"></div>
+            <img src="https://img.icons8.com/color/48/000000/twitter-squared.png">
+            <%= f.text_field :Twitter, class: 'form-control', id: 'meishi_twitter' ,:placeholder => "example.com"%>
+            <div class="form-group"></div>
+            <img src="https://img.icons8.com/color/48/000000/instagram-new.png">
+            <%= f.text_field :insta, class: 'form-control', id: 'meishi_insta' ,:placeholder => "example.com"%>
+            <div class="form-group"></div>
 
-      .cls-2 {
-        font-size: 19px;
-      }
+            <img src="https://img.icons8.com/color/48/000000/facebook.png">
+            <%= f.text_field :facebook, class: 'form-control', id: 'meishi_facebook' ,:placeholder => "example.com"%>
+            <div class="form-group"></div>
+            <img src="https://img.icons8.com/color/48/000000/line-me.png">
+            <%= f.text_field :line, class: 'form-control', id: 'meishi_line' ,:placeholder => "example.com"%>
+            <div class="form-group"></div>
+            <img src="https://img.icons8.com/color/48/000000/linkedin.png">
+            <%= f.text_field :linkedln, class: 'form-control', id: 'meishi_linkedln' ,:placeholder => "example.com"%>
+            <div class="form-group"></div>
+            <%= f.label :pixiv %>
+            <%= f.text_field :pixiv, class: 'form-control', id: 'meishi_pixiv',:placeholder => "example.com" %>
+            <div class="form-group"></div>
+            <img src="https://img.icons8.com/color/48/000000/youtube-play.png">
+            <%= f.text_field :youtube, class: 'form-control', id: 'meishi_youtube',:placeholder => "example.com" %>
+            <div class="form-group"></div>
+            <img src="https://img.icons8.com/color/48/000000/web.png">
+            <%= f.text_field :website1, class: 'form-control', id: 'meishi_website1',:placeholder => "example.com" %>
+            <div class="form-group"></div>
+            <img src="https://img.icons8.com/color/48/000000/home.png">
+            <%= f.text_field :website2, class: 'form-control', id: 'meishi_website2' ,:placeholder => "example.com"%>
+            <div class="form-group"></div>
+            <%= f.label :アカウント1 %>
+            <%= f.text_field :account1_info, class: 'form-control', id: 'meishi_account1_info' ,:placeholder => "example.com"%>
+            <div class="form-group"></div>
+            <%= f.label :アカウント2 %>
+            <%= f.text_field :account2_info, class: 'form-control', id: 'meishi_account2_info' ,:placeholder => "example.com"%>
+            <div class="form-group"></div>
+            <%= f.label :アカウント3 %>
+            <%= f.text_field :account3_info, class: 'form-control', id: 'meishi_account3_info' ,:placeholder => "example.com"%>
+            <div class="form-group"></div>
+            <%= f.label :アカウント4 %>
+            <%= f.text_field :account4_info, class: 'form-control', id: 'meishi_account4_info',:placeholder => "example.com" %>
+            <%= f.submit nil, class: 'btn btn-primary' %>
+            <% end %>
+        </div>
+        <div class="col-md-6  ">
+            <svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81">
+                <defs>
+                    <style>
+                        .cls-1 {
+                            fill: #b5b5b6;
+                        }
 
-      .cls-2,
-      .cls-3,
-      .cls-4 {
-        fill: #231815;
-      }
+                        .cls-2 {
+                            font-size: 19px;
+                        }
 
-      .cls-2,
-      .cls-3 {
-        font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;
-      }
+                        .cls-2,
+                        .cls-3,
+                        .cls-4 {
+                            fill: #231815;
+                        }
 
-      .cls-3 {
-        font-size: 12px;
-      }
+                        .cls-2,
+                        .cls-3 {
+                            font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;
+                        }
 
-      .cls-5 {
-        fill: #c30d23;
-      }
-    </style>
-  </defs>
-  <title>テスト名刺２</title>
-  <rect class="cls-1" x="-2.78" width="266.74" height="158.83" transform="translate(263.96 212.81) rotate(180)" /><text
-    class="cls-2" transform="translate(20.84 88.85)"><%=  @meishi.name %></text><text class="cls-2"
-    transform="translate(149.12 90.6)"> <%= @meishi.intro %></text><text class="cls-2"
-    transform="translate(20.84 176.93)">アイ<tspan x="0" y="18">コン</tspan></text><text x="2.78" y="53.98" /><text
-    class="cls-3" transform="translate(120.46 116.11)">テストテストテスト</text>
-  <rect class="cls-4" x="201.54" y="167.14" width="39.15" height="34.25" />
-  <rect class="cls-5" x="97.21" y="164.35" width="42.12" height="32.5" /><text x="2.78" y="53.98" /><text x="2.78"
-    y="53.98" /><text x="2.78" y="53.98" />
+                        .cls-3 {
+                            font-size: 12px;
+                        }
 
-</svg>
-↑固定して内容を反映させる
- </div>
- </div> </div>
+                        .cls-5 {
+                            fill: #c30d23;
+                        }
+                    </style>
+                </defs>
+                <title>テスト名刺２</title>
+                <rect class="cls-1" x="-2.78" width="266.74" height="158.83"
+                    transform="translate(263.96 212.81) rotate(180)" /><text class="cls-2"
+                    transform="translate(20.84 88.85)"><%=  @meishi.name %></text><text class="cls-2"
+                    transform="translate(149.12 90.6)"> <%= @meishi.intro %></text><text class="cls-2"
+                    transform="translate(20.84 176.93)">アイ<tspan x="0" y="18">コン</tspan></text><text x="2.78"
+                    y="53.98" /><text class="cls-3" transform="translate(120.46 116.11)">テストテストテスト</text>
+                <rect class="cls-4" x="201.54" y="167.14" width="39.15" height="34.25" />
+                <rect class="cls-5" x="97.21" y="164.35" width="42.12" height="32.5" /><text x="2.78" y="53.98" /><text
+                    x="2.78" y="53.98" /><text x="2.78" y="53.98" />
+
+            </svg>
+            ↑固定して内容を反映させる
+        </div>
+    </div>
+</div>
