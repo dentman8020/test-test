@@ -6,57 +6,58 @@
 
  <div class="form-group"></div>
   <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control', id: 'meishi_name' %>
+  <%= f.text_field :name, class: 'form-control', id: 'meishi_name' ,:placeholder => "name"%>
    <div class="form-group"></div>
   <%= f.label :address %>
-  <%= f.text_field :address, class: 'form-control', id: 'meishi_address' %>
+  <%= f.text_field :address, class: 'form-control', id: 'meishi_address',:placeholder => "Enter your email..."%>
  <div class="form-group"></div>
   <%= f.label :一言　%>
-  <%= f.text_field :intro, class: 'form-control', id: 'meishi_intro' %>
+  <%= f.text_field :intro, class: 'form-control', id: 'meishi_intro',:placeholder => "Hello"%>
   <div class="form-group"></div>
   <%= f.label :自己紹介２ %>
-  <%= f.text_field :intro2, class: 'form-control', id: 'meishi_intro2' %>
+  <%= f.text_field :intro2, class: 'form-control', id: 'meishi_intro2',:placeholder => "I'm human" %>
   <div class="form-group"></div>
   <%= f.label :緊急連絡先 %>
-  <%= f.text_field :number, class: 'form-control', id: 'meishi_number' %>
+  <%= f.text_field :number, class: 'form-control', id: 'meishi_number' ,:placeholder => "090 0000 0000"%>
   <div class="form-group"></div>
-  <%= f.label :Twitter %>
-  <%= f.text_field :Twitter, class: 'form-control', id: 'meishi_twitter' %>
+  <img src="https://img.icons8.com/color/48/000000/twitter-squared.png">
+  <%= f.text_field :Twitter, class: 'form-control', id: 'meishi_twitter' ,:placeholder => "example.com"%>
    <div class="form-group"></div>
-  <%= f.label :insta %>
-  <%= f.text_field :insta, class: 'form-control', id: 'meishi_insta' %>
+  <img src="https://img.icons8.com/color/48/000000/instagram-new.png">
+  <%= f.text_field :insta, class: 'form-control', id: 'meishi_insta' ,:placeholder => "example.com"%>
    <div class="form-group"></div>
-  <%= f.label :facebook %>
-  <%= f.text_field :facebook, class: 'form-control', id: 'meishi_facebook' %>
+  
+  <img src="https://img.icons8.com/color/48/000000/facebook.png">
+  <%= f.text_field :facebook, class: 'form-control', id: 'meishi_facebook' ,:placeholder => "example.com"%>
    <div class="form-group"></div>
-  <%= f.label :line %>
-  <%= f.text_field :line, class: 'form-control', id: 'meishi_line' %>
+ <img src="https://img.icons8.com/color/48/000000/line-me.png">
+  <%= f.text_field :line, class: 'form-control', id: 'meishi_line' ,:placeholder => "example.com"%>
    <div class="form-group"></div>
-  <%= f.label :linkedln %>
-  <%= f.text_field :linkedln, class: 'form-control', id: 'meishi_linkedln' %>
+  <img src="https://img.icons8.com/color/48/000000/linkedin.png">
+  <%= f.text_field :linkedln, class: 'form-control', id: 'meishi_linkedln' ,:placeholder => "example.com"%>
   <div class="form-group"></div>
   <%= f.label :pixiv %>
-  <%= f.text_field :pixiv, class: 'form-control', id: 'meishi_pixiv' %>
+  <%= f.text_field :pixiv, class: 'form-control', id: 'meishi_pixiv',:placeholder => "example.com" %>
   <div class="form-group"></div>
-  <%= f.label :youtube %>
-  <%= f.text_field :youtube, class: 'form-control', id: 'meishi_youtube' %>
+<img src="https://img.icons8.com/color/48/000000/youtube-play.png">
+  <%= f.text_field :youtube, class: 'form-control', id: 'meishi_youtube',:placeholder => "example.com" %>
   <div class="form-group"></div>
-  <%= f.label :website1 %>
-  <%= f.text_field :website1, class: 'form-control', id: 'meishi_website1' %>
+  <img src="https://img.icons8.com/color/48/000000/web.png">
+  <%= f.text_field :website1, class: 'form-control', id: 'meishi_website1',:placeholder => "example.com" %>
   <div class="form-group"></div>
-  <%= f.label :website2 %>
-  <%= f.text_field :website2, class: 'form-control', id: 'meishi_website2' %>
+ <img src="https://img.icons8.com/color/48/000000/home.png">
+  <%= f.text_field :website2, class: 'form-control', id: 'meishi_website2' ,:placeholder => "example.com"%>
   <div class="form-group"></div>
   <%= f.label :アカウント1 %>
-  <%= f.text_field :account1_info, class: 'form-control', id: 'meishi_account1_info' %>
+  <%= f.text_field :account1_info, class: 'form-control', id: 'meishi_account1_info' ,:placeholder => "example.com"%>
   <div class="form-group"></div>
   <%= f.label :アカウント2 %>
-  <%= f.text_field :account2_info, class: 'form-control', id: 'meishi_account2_info' %>
+  <%= f.text_field :account2_info, class: 'form-control', id: 'meishi_account2_info' ,:placeholder => "example.com"%>
   <div class="form-group"></div>
   <%= f.label :アカウント3 %>
-  <%= f.text_field :account3_info, class: 'form-control', id: 'meishi_account3_info' %>
+  <%= f.text_field :account3_info, class: 'form-control', id: 'meishi_account3_info' ,:placeholder => "example.com"%>
   <div class="form-group"></div>
   <%= f.label :アカウント4 %>
-  <%= f.text_field :account4_info, class: 'form-control', id: 'meishi_account4_info' %>
+  <%= f.text_field :account4_info, class: 'form-control', id: 'meishi_account4_info',:placeholder => "example.com" %>
  <%= f.submit nil, class: 'btn btn-primary' %>
  <% end %>
