@@ -63,6 +63,6 @@ class MeishisController < ApplicationController
   
   private
   def meishi_params
-    params.require(:meishi).permit(:name, :intro, :account1_info, :account2_info, :account3_info, :account4_info) 
+    params.require(:meishi).permit(:name, :intro, :account1_info, :account2_info, :account3_info, :account4_info,   :intro2, :number, :facebook, :twitter, :insta, :line, :website1, :website2, :pixiv, :linkedln, :youtube, :address) 
   end
 end  
