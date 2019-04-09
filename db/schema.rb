@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_09_132033) do
+ActiveRecord::Schema.define(version: 2019_04_09_141523) do
 
   create_table "meishis", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2019_04_09_132033) do
     t.datetime "updated_at", null: false
     t.string "intro2"
     t.string "number"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "insta"
+    t.string "line"
+    t.string "website1"
+    t.string "website2"
+    t.string "pixiv"
+    t.string "linkedln"
+    t.string "youtube"
+    t.string "address"
   end
 
   create_table "users", force: :cascade do |t|

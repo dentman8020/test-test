@@ -15,7 +15,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 bg-primary ">
-      <h3>名刺の名前（”フリーランス用”など、利用ユーザーのみ表記）</h3>
+      <h3>「<%= @meishi.name %>」（”フリーランス用”など、利用ユーザーのみ表記）</h3>
     </div>
   </div>
   <br>
@@ -34,12 +34,13 @@
 
       <div class="col-md-9 bg-info">
         <br>
-        <h4>・アカウント名</h4>
+        <h4></h4>
         <br>
-        <h4>・連絡先（DM、電話番号など）</h4>
+        <h4>メール「<%= @meishi.address %> 」</h4>
         <br>
-        <h4>・一言コメント（”ご依頼の返信は２.３日頂きます”など）</h4>
+        <h4>一言「<%= @meishi.intro %>」</h4>
         <br>
+         <h4>電話番号「<%= @meishi.number %>」</h4>
       </div>
 
     </div>
@@ -48,7 +49,7 @@
   <div class="row">
     <div class="col-md-12 bg-warning">
 
-      <h3>自己紹介の追加</h3>
+      <h3>「<%= @meishi.intro2 %>」</h3>
       <br> <br> <br> <br>
 
     </div>
@@ -58,22 +59,22 @@
   <div class="row">
     <div class="col-md-3 bg-success text-center">
       <br> <br>
-      <h3>insta</h3>
+      <h3><%= @meishi.insta %></h3>
       <br> <br>
     </div>
     <div class="col-md-3 bg-success text-center">
       <br> <br>
-      <h3>LINE</h3>
+      <h3><%= @meishi.line %></h3>
       <br> <br>
     </div>
     <div class="col-md-3 bg-success text-center">
       <br> <br>
-      <h3>Twitter</h3>
+      <h3><%= @meishi.twitter %></h3>
       <br> <br>
     </div>
     <div class="col-md-3 bg-success text-center">
       <br> <br>
-      <h3>個人サイト</h3>
+      <h3><%= @meishi.website1 %></h3>
       <br> <br> <br> <br>
     </div>
   </div>
