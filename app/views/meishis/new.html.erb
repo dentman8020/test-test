@@ -21,9 +21,7 @@
             <div class="form-group"></div>
             <%= f.label :自己紹介２ %>
             <%= f.text_field :intro2, class: 'form-control', id: 'meishi_intro2',:placeholder => "I'm human" %>
-            <div class="form-group"></div>
-            <%= f.label :緊急連絡先 %>
-            <%= f.text_field :number, class: 'form-control', id: 'meishi_number' ,:placeholder => "090 0000 0000"%>
+           
             <div class="form-group"></div>
             <img src="https://img.icons8.com/color/48/000000/twitter-squared.png">
             <%= f.text_field :Twitter, class: 'form-control', id: 'meishi_twitter' ,:placeholder => "example.com"%>
@@ -64,7 +62,8 @@
             <div class="form-group"></div>
             <%= f.label :アカウント4 %>
             <%= f.text_field :account4_info, class: 'form-control', id: 'meishi_account4_info',:placeholder => "example.com" %>
-            
+            <%= f.submit nil, class: 'btn btn-primary text-center' %>
+            <% end %>
         </div>
         <div class="col-md-6  ">
         <div class="menu">
@@ -117,8 +116,7 @@
             <br>
             <br>
 
-            <%= f.submit nil, class: 'btn btn-primary ' %>
-            <% end %>
+            
         </div>
         </div>
     </div>

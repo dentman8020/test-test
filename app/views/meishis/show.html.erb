@@ -12,47 +12,40 @@
 <% end %>
 <%= link_to '一覧に戻る', meishis_path %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 bg-primary ">
-      <h3>「<%= @meishi.name %>」（”フリーランス用”など、利用ユーザーのみ表記）</h3>
-    </div>
-  </div>
+<div class="container ">
+
   <br>
-  <div class="center ">
+  <div class="center effect7">
 
     <div class="row">
-      <div class="col-md-3 bg-danger">
+      <div class="col-md-12  text-center">
 
         <p>
-<strong>Picture:</strong>
-<%= image_tag(@meishi.picture_url) if @meishi.picture.present? %>
-</p>
-        <br>
-        <br>
-        <br>
-        <br>
+
+          <%= image_tag(@meishi.picture_url) if @meishi.picture.present? %>
+        </p>
+        
 
       </div>
-
-      <div class="col-md-9 bg-info">
+      <div class="col-md-12   text-center">
+        <h3>名前「<%= @meishi.name %>」</h3>
         <br>
-        <h4></h4>
-        <br>
-        <h4>メール「<%= @meishi.address %> 」</h4>
+        <h4>連絡先「<%= @meishi.address %> 」</h4>
         <br>
         <h4>一言「<%= @meishi.intro %>」</h4>
         <br>
-         <h4>電話番号「<%= @meishi.number %>」</h4>
+        
+        <br>
+        
       </div>
 
     </div>
   </div>
   <br>
   <div class="row">
-    <div class="col-md-12 bg-warning">
+    <div class="col-md-12 text-center effect7">
 
-      <h3>「<%= @meishi.intro2 %>」</h3>
+      <h3>追加プロフィール「<%= @meishi.intro2 %>」</h3>
       <br> <br> <br> <br>
 
 
@@ -60,23 +53,23 @@
   </div>
   ↑友人用なら不必要だが、仕事用に情報を足したい人は追加できるようにしたい。
   <br>
-  <div class="row">
-    <div class="col-md-3 bg-success text-center">
+  <div class="row effect7">
+    <div class="col-md-3 text-center ">
       <br> <br>
       <h3><%= @meishi.insta %></h3>
       <br> <br>
     </div>
-    <div class="col-md-3 bg-success text-center">
+    <div class="col-md-3  text-center">
       <br> <br>
       <h3><%= @meishi.line %></h3>
       <br> <br>
     </div>
-    <div class="col-md-3 bg-success text-center">
+    <div class="col-md-3  text-center">
       <br> <br>
       <h3><%= @meishi.twitter %></h3>
       <br> <br>
     </div>
-    <div class="col-md-3 bg-success text-center">
+    <div class="col-md-3  text-center">
       <br> <br>
       <h3><%= @meishi.website1 %></h3>
       <br> <br> <br> <br>
@@ -84,7 +77,7 @@
   </div>
   ↑横並びか縦並びにするか、アイコンかリンク埋め込みにするか
   <div class="row">
-    <div class="col-md-6 bg-primary text-center">
+    <div class="col-md-6 effect7 text-center">
       <br>
       <br>
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
@@ -120,7 +113,7 @@
 
 
     </div>
-    <div class="col-md-6 bg-primary text-center">
+    <div class="col-md-6 effect7 text-center">
 
       <br>
       <br>
@@ -163,9 +156,9 @@
           <path d="M9.213,9.581 L336.787,9.581 L336.787,196.611 L9.213,196.611 z" fill-opacity="0" stroke="#000000"
             stroke-width="1" />
         </g>
-    
+
       </svg>
-      
+
 
     </div>
     <br>
