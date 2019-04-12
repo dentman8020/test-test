@@ -42,107 +42,117 @@
     </div>
   </div>
   <br>
+
+  <% if @meishi.intro2 ==""%>
+  <% else %>
   <div class="row">
     <div class="col-md-12 text-center effect7">
-
       <h3>追加プロフィール「<%= @meishi.intro2 %>」</h3>
-      <br> <br> <br> <br>
-
-
     </div>
   </div>
-  ↑友人用なら不必要だが、仕事用に情報を足したい人は追加できるようにしたい。
+  <br> <br> <br> <br>
+  <% end %>
+
+
+
   <br>
   <div class="row effect7">
-    
-     
-      <% if @meishi.insta =="" %>
-    
-      <% else %>
-        
-      <div class="col-md-3 text-center ">
+
+
+    <% if @meishi.insta =="" %>
+
+    <% else %>
+
+    <div class="col-md-3 text-center ">
       <br> <br>
       <a href="<%= @meishi.insta %>"><img src="https://img.icons8.com/color/96/000000/instagram-new.png"></a>
-        <br> <br>
-      </div>
-      <% end %>
-      
-     
-    
-    
-    <br> <br>
-       <% if @meishi.line =="" %>
-    
-      <% else %>
-        
-      <div class="col-md-3  text-center">
       <br> <br>
-      <a href="<%= @meishi.line %>"><img src="https://img.icons8.com/color/96/000000/line-me.png"></a>
-        <br> <br>
-      </div>
-      <% end %>
-     
-       <% if @meishi.twitter =="" %>
-    
-      <% else %>
-       <div class="col-md-3  text-center">
-         <br> <br>
-      <a href="<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/96/000000/twitter-squared.png"></a>
-        <br> <br>
-       </div>
-      <% end %>
-     
-       <% if @meishi.facebook =="" %>
-    
-      <% else %>
-       <div class="col-md-3  text-center">
-         <br> <br>
-      <a href="<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/96/000000/facebook.png"></a>
-        <br> <br>
-       </div>
-      <% end %>
+    </div>
+    <% end %>
 
-       <% if @meishi.linkedln =="" %>
-    
-      <% else %>
-       <div class="col-md-3  text-center">
-         <br> <br>
-      <a href="<%= @meishi.linkedln %>"><img src="https://img.icons8.com/color/96/000000/linkedin.png"></a>
-        <br> <br>
-       </div>
-      <% end %>
+
+
+
    
-    <% if @meishi.youtube =="" %>
-    
-      <% else %>
-       <div class="col-md-3  text-center">
-         <br> <br>
-      <a href="<%= @meishi.youtube %>"><img src="https://img.icons8.com/color/96/000000/youtube-play.png"></a>
-        <br> <br>
-       </div>
-      <% end %>
-   
-    <% if @meishi.website1 =="" %>
-    
-      <% else %>
-       <div class="col-md-3  text-center">
-         <br> <br>
-      <a href="<%= @meishi.website2 %>"><img src="https://img.icons8.com/color/96/000000/home.png"></a>
-        <br> <br>
-       </div>
-      <% end %>
-   
-   
-   
+    <% if @meishi.line =="" %>
+
+    <% else %>
+
     <div class="col-md-3  text-center">
       <br> <br>
-      <h3><%= @meishi.website1 %></h3>
-      <br> <br> <br> <br>
+      <a href="<%= @meishi.line %>"><img src="https://img.icons8.com/color/96/000000/line-me.png"></a>
+      <br> <br>
     </div>
+    <% end %>
+
+    <% if @meishi.twitter =="" %>
+
+    <% else %>
+    <div class="col-md-3  text-center">
+      <br> <br>
+      <a href="<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/96/000000/twitter-squared.png"></a>
+      <br> <br>
+    </div>
+    <% end %>
+
+    <% if @meishi.facebook =="" %>
+
+    <% else %>
+    <div class="col-md-3  text-center">
+      <br> <br>
+      <a href="<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/96/000000/facebook.png"></a>
+      <br> <br>
+    </div>
+    <% end %>
+
+    <% if @meishi.linkedln =="" %>
+
+    <% else %>
+    <div class="col-md-3  text-center">
+      <br> <br>
+      <a href="<%= @meishi.linkedln %>"><img src="https://img.icons8.com/color/96/000000/linkedin.png"></a>
+      <br> <br>
+    </div>
+    <% end %>
+
+    <% if @meishi.youtube =="" %>
+
+    <% else %>
+    <div class="col-md-3  text-center">
+      <br> <br>
+      <a href="<%= @meishi.youtube %>"><img src="https://img.icons8.com/color/96/000000/youtube-play.png"></a>
+      <br> <br>
+    </div>
+    <% end %>
+
+
+
+    <% if @meishi.website1 =="" %>
+
+    <% else %>
+    <div class="col-md-3  text-center">
+      <br> <br>
+      <a href="<%= @meishi.website1 %>"><img src="https://img.icons8.com/color/96/000000/web.png"></a>
+      <br> <br>
+    </div>
+    <% end %>
+  <% if @meishi.website2 =="" %>
+
+    <% else %>
+    <div class="col-md-3  text-center">
+      <br> <br>
+      <a href="<%= @meishi.website2 %>"><img src="https://img.icons8.com/color/96/000000/home.png"></a>
+      <br> <br>
+    </div>
+    <% end %>
+
+
+    
     <div class="col-md-12 text-center">
-    <%= qrcode_tag request.url, module_size: 2 %>
-    <br>
-    <br>
+     <br>
+      <%= qrcode_tag request.url, module_size: 2 %>
+      <br>
+      <br>
     </div>
   </div>
   ↑URL入力したアイコンのみ表示するようにしています。一行最大4個まで
