@@ -2,6 +2,107 @@
   <%= javascript_pack_tag 'hello_vue' %>
 
 </head>
+<div class="d-inline-block">
+  <div class="container ">
+
+
+    <div class="row">
+
+      <% if @meishi.picture_url =="" %>
+
+      <% else %>
+      <div class="col-md-5  ">
+        <%= image_tag(@meishi.picture_url) if @meishi.picture.present? %>
+        <% end %>
+      </div>
+      <div class="col-md-7  text-center">
+       <br>
+        <h8>名前「<%= @meishi.name %>」</h8>
+       <br>
+        <br>
+        <h8>一言「<%= @meishi.intro %>」</h8>
+      </div>
+    </div>
+    <div class="col-md-12  ">
+      <div class="row">
+        <% if @meishi.insta =="" %>
+
+        <% else %>
+
+        <div class="col-md-3 text-center ">
+
+          <a href="<%= @meishi.insta %>"><img src="https://img.icons8.com/color/96/000000/instagram-new.png"></a>
+
+        </div>
+        <% end %>
+
+
+
+
+
+        <% if @meishi.line =="" %>
+
+        <% else %>
+
+        <div class="col-md-3  text-center">
+
+          <a href="<%= @meishi.line %>"><img src="https://img.icons8.com/color/96/000000/line-me.png"></a>
+        </div>
+        <% end %>
+
+        <% if @meishi.twitter =="" %>
+
+        <% else %>
+        <div class="col-md-3  text-center">
+          <a href="<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/96/000000/twitter-squared.png"></a>
+        </div>
+        <% end %>
+
+        <% if @meishi.facebook =="" %>
+
+        <% else %>
+        <div class="col-md-3  text-center">
+          <a href="<%= @meishi.facebook %>"><img src="https://img.icons8.com/color/96/000000/facebook.png"></a>
+        </div>
+        <% end %>
+
+        <% if @meishi.linkedln =="" %>
+
+        <% else %>
+        <div class="col-md-3  text-center">
+          <a href="<%= @meishi.linkedln %>"><img src="https://img.icons8.com/color/96/000000/linkedin.png"></a>
+        </div>
+        <% end %>
+
+        <% if @meishi.youtube =="" %>
+
+        <% else %>
+        <div class="col-md-3  text-center">
+          <a href="<%= @meishi.youtube %>"><img src="https://img.icons8.com/color/96/000000/youtube-play.png"></a>
+        </div>
+        <% end %>
+
+
+
+        <% if @meishi.website1 =="" %>
+
+        <% else %>
+        <div class="col-md-3  text-center">
+          <a href="<%= @meishi.website1 %>"><img src="https://img.icons8.com/color/96/000000/web.png"></a>
+        </div>
+        <% end %>
+        <% if @meishi.website2 =="" %>
+
+        <% else %>
+        <div class="col-md-3  text-center">
+          <a href="<%= @meishi.website2 %>"><img src="https://img.icons8.com/color/96/000000/home.png"></a>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <h2>名刺の表示のテスト <%= current_user.id %> </h2>
@@ -73,7 +174,7 @@
 
 
 
-   
+
     <% if @meishi.line =="" %>
 
     <% else %>
@@ -136,7 +237,7 @@
       <br> <br>
     </div>
     <% end %>
-  <% if @meishi.website2 =="" %>
+    <% if @meishi.website2 =="" %>
 
     <% else %>
     <div class="col-md-3  text-center">
@@ -147,9 +248,9 @@
     <% end %>
 
 
-    
+
     <div class="col-md-12 text-center">
-     <br>
+      <br>
       <%= qrcode_tag request.url, module_size: 2 %>
       <br>
       <br>
