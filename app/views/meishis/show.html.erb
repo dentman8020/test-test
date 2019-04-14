@@ -2,7 +2,7 @@
   <%= javascript_pack_tag 'hello_vue' %>
 
 </head>
-<div class="d-inline-block">
+<div class="d-inline-block ">
   <div class="container ">
 
 
@@ -29,7 +29,7 @@
 
         <% else %>
 
-        <div class="col-md-3 text-center ">
+        <div class="col-md-3 text-center col-xs-3">
 
           <a href="<%= @meishi.insta %>"><img src="https://img.icons8.com/color/96/000000/instagram-new.png"></a>
 
@@ -53,8 +53,8 @@
         <% if @meishi.twitter =="" %>
 
         <% else %>
-        <div class="col-md-3  text-center">
-          <a href="<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/96/000000/twitter-squared.png"></a>
+        <div class="col-md-3  text-center col-xs-3">
+          <a href="https://twitter.com/<%= @meishi.twitter %>"><img src="https://img.icons8.com/color/96/000000/twitter-squared.png"></a>
         </div>
         <% end %>
 
@@ -103,6 +103,7 @@
     </div>
   </div>
 </div>
+
 
 
 <h2>名刺の表示のテスト <%= current_user.id %> </h2>
