@@ -62,8 +62,8 @@
         <a class="nav-link" href="#">SNS登録</a>
       </li>
       <li class="nav-item">
-         <%= link_to '使い方', 'meishis/guide'%>
-         
+        <%= link_to '使い方', 'meishis/guide'%>
+
       </li>
       <li class="nav-item">
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
@@ -81,12 +81,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#">編集</a>
           <input type="submit" id="chan">
-        
+
 
 
         </li>
         <li class="nav-item">
-          <a class="nav-link" >削除</a>
+          <a class="nav-link">削除</a>
           <input type="submit" id="chan2">
 
         </li>
@@ -103,68 +103,132 @@
 
     <div class="row">
 
-     <% @meishis.each do |meishi|%>
+      <% @meishis.each do |meishi|%>
 
-      <div class="col-md-3 ">
-   
+      <div class="col-md-4 ">
+
         <div id="list">
           <%= link_to '削除', meishi_path(meishi), method: :delete %> ------------
 
           <%= link_to '編集', "/meishis/#{meishi.id}/#{meishi.key}/#edit", method: :edit %>-----------
-           <%= link_to '公開', "/meishis/#{meishi.id}/#{meishi.key}", method: :show %>-----------
-        
-            <input type="radio"  name="meishi_radiobox" value="<%= meishi.id %>" checked>
+          <%= link_to '公開', "/meishis/#{meishi.id}/#{meishi.key}", method: :show %>-----------
+
+          <input type="radio" name="meishi_radiobox" value="<%= meishi.id %>" checked>
 
 
 
 </form>
 
+<div class="container ">
+  <div class="row">
 
-<svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.74 212.81">
+    <div class="d-inline-block">
+      <div class="row">
 
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #b5b5b6;
-      }
+        <% if meishi.picture_url =="" %>
 
-      .cls-2 {
-        font-size: 19px;
-      }
+        <% else %>
+        <div class="col-md-5  ">
+          <%= image_tag(meishi.picture_url) if meishi.picture.present? %>
+          <% end %>
+        </div>
+        <div class="col-md-7  text-center">
+          <br>
+          <h8>名前「<%= meishi.name %>」</h8>
+          <br>
+          <br>
+          <h8>一言「<%= meishi.intro %>」</h8>
+        </div>
+      </div>
+      <div class="col-md-12  ">
+        <div class="row">
+          <% if meishi.insta =="" %>
 
-      .cls-2,
-      .cls-3,
-      .cls-4 {
-        fill: #231815;
-      }
+          <% else %>
 
-      .cls-2,
-      .cls-3 {
-        font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;
-      }
+          <div class="col-xs-3 text-center ">
 
-      .cls-3 {
-        font-size: 12px;
-      }
+            <a href="<%= meishi.insta %>"><img src="https://img.icons8.com/color/100/000000/instagram-new.png"
+                width=50px></a>
 
-      .cls-5 {
-        fill: #c30d23;
-      }
-    </style>
-  </defs>
-  <title>テスト名刺２</title>
-  <a href="/meishis/<%=meishi.id%>/<%=meishi.key%>">
-  <rect class="cls-1" x="-2.78" width="266.74" height="158.83" transform="translate(263.96 212.81) rotate(180)" /><text
-    class="cls-2" transform="translate(20.84 88.85)">
-    <%= meishi.name %></text><text class="cls-2" transform="translate(149.12 90.6)">
-    <%= meishi.intro %></text><text class="cls-2" transform="translate(20.84 176.93)">アイ<tspan x="0" y="18">コン</tspan>
-  </text><text x="2.78" y="53.98" /><text class="cls-3" transform="translate(120.46 116.11)">テストテストテスト</text>
-  <rect class="cls-4" x="201.54" y="167.14" width="39.15" height="34.25" />
-  <rect class="cls-5" x="97.21" y="164.35" width="42.12" height="32.5" /><text x="2.78" y="53.98" /><text x="2.78"
-    y="53.98" /><text x="2.78" y="53.98" />
-</svg>
-</a>
+          </div>
+          <% end %>
+
+
+
+
+
+          <% if meishi.line =="" %>
+
+          <% else %>
+
+          <div class="col-xs-3  text-center">
+
+            <a href="<%= meishi.line %>"><img src="https://img.icons8.com/color/96/000000/line-me.png" width=50px></a>
+          </div>
+          <% end %>
+
+          <% if meishi.twitter =="" %>
+
+          <% else %>
+          <div class="col-xs-3  text-center">
+            <a href="<%= meishi.twitter %>"><img src="https://img.icons8.com/color/96/000000/twitter-squared.png"
+                width=50px></a>
+          </div>
+          <% end %>
+
+          <% if meishi.facebook =="" %>
+
+          <% else %>
+          <div class="col-xs-3  text-center">
+            <a href="<%= meishi.facebook %>"><img src="https://img.icons8.com/color/96/000000/facebook.png"
+                width=50px></a>
+          </div>
+          <% end %>
+
+          <% if meishi.linkedln =="" %>
+
+          <% else %>
+          <div class="col-xs-3  text-center">
+            <a href="<%= meishi.linkedln %>"><img src="https://img.icons8.com/color/96/000000/linkedin.png"
+                width=50px></a>
+          </div>
+          <% end %>
+
+          <% if meishi.youtube =="" %>
+
+          <% else %>
+          <div class="col-xs-3  text-center">
+            <a href="<%= meishi.youtube %>"><img src="https://img.icons8.com/color/96/000000/youtube-play.png"
+                width=50px></a>
+          </div>
+          <% end %>
+
+
+
+          <% if meishi.website1 =="" %>
+
+          <% else %>
+          <div class="col-xs-3  text-center">
+            <a href="<%= meishi.website1 %>"><img src="https://img.icons8.com/color/96/000000/web.png" width=50px></a>
+          </div>
+          <% end %>
+          <% if meishi.website2 =="" %>
+
+          <% else %>
+          <div class="col-xs-3  text-center">
+            <a href="<%= meishi.website2 %>"><img src="https://img.icons8.com/color/96/000000/home.png" width=50px></a>
+          </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
+</div>
+
 </div>
 <% end %>
 
@@ -176,30 +240,30 @@
 
   btn.addEventListener('click', function () {
 
-  <% @meishis.each do |meishi| %>
-        if (document.meishi_list.meishi_radiobox.value=="<%= meishi.id %>") {
-          alert("<%= meishi.id %>ばいばい");
-        
-         window.open( "/meishis/<%= meishi.id %>/<%= meishi.key%>/#edit");
-               
-  
-          }        
-   <% end %>
-    })
-      var btn = document.getElementById('chan2');
+    <% @meishis.each do |meishi| %>
+    if (document.meishi_list.meishi_radiobox.value == "<%= meishi.id %>") {
+      alert("<%= meishi.id %>ばいばい");
+
+      window.open("/meishis/<%= meishi.id %>/<%= meishi.key%>/#edit");
+
+
+    }
+    <% end %>
+  })
+  var btn = document.getElementById('chan2');
 
   btn.addEventListener('click', function () {
 
-  <% @meishis.each do |meishi| %>
-        if (document.meishi_list.meishi_radiobox.value=="<%= meishi.id %>") {
-          alert("<%= meishi.id %>ばいばい");
-        
-        location.href( "<% meishi_path(meishi.id,meishi.key) %>");
-               
-  
-          }        
-   <% end %>
-    })
+    <% @meishis.each do |meishi| %>
+    if (document.meishi_list.meishi_radiobox.value == "<%= meishi.id %>") {
+      alert("<%= meishi.id %>ばいばい");
+
+      location.href("<% meishi_path(meishi.id,meishi.key) %>");
+
+
+    }
+    <% end %>
+  })
 </script>
 <br><br><br><br><br><br>
 <br><br><br><br><br><br>
